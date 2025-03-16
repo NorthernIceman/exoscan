@@ -1,3 +1,5 @@
 ### Python ###
 __pycache__/
 provider/credentials.txt
+test.py 
+checks.txt
