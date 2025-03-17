@@ -1,6 +1,6 @@
 import logging
 
-def set_logging_config():
+def set_logging_config(verbose):
     formatter = logging.Formatter(
         "{asctime} - {levelname} - {message}",
         style="{",
@@ -11,7 +11,8 @@ def set_logging_config():
 
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(formatter)
-    console_handler.setLevel(30)
+    if verbose: console_handler.setLevel(10)
+    else: console_handler.setLevel(30)
     
     file_handler = logging.FileHandler("exoscan.log", mode="a", encoding="utf-8")
     file_handler.setFormatter(formatter)
