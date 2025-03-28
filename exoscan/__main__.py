@@ -24,7 +24,7 @@ def exoscan():
         logger.info("Authentication successful.")
     else:
         logger.error("Authentication not successful. Aborting...")
-        sys.exit()
+        sys.exit(-1)
 
     #start checks
 
