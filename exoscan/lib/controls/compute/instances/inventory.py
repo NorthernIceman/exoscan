@@ -1,4 +1,4 @@
-import requests, os, json, exit
+import requests, os, json, sys
 from provider.exoscale_provider import authenticate
 from exoscan.lib.controls.models import Instance, InstanceContainer
 from provider.return_regions import return_regions
@@ -12,10 +12,12 @@ from log_conf.logger import logger
 def get_instances() -> InstanceContainer:
     try:
         cache_file = "exoscan/lib/controls/compute/instances/instance.inventory.json"
-        if os.path.exists("instance_cache.json"):
+        if os.path.exists(cache_file):
             with open(cache_file, "r") as f:
                 json_data = json.load(f)
+                print(json_data)
         else: 
+            logger.info("Creating Inventory of instances...")
             auth = authenticate()
             all_instances = []
             regions = return_regions()
@@ -23,7 +25,6 @@ def get_instances() -> InstanceContainer:
             for region in regions:
                 response = requests.get(f"https://api-{region}.exoscale.com/v2/instance", auth=auth).json()
                 all_instances.extend(response.get("instances", []))
-                #all_instances.extend(container.instances)
             
             json_data = {"instances": all_instances}
 

@@ -34,13 +34,17 @@ def import_all_controls(services: str = None) -> list[tuple]:
     
 
 def parse_response(cls, data: Any):
-    if isinstance(data, list):
-        return[parse_response(cls.__args__[0], item) for item in data]
-    if is_dataclass(cls):
-        fieldtypes = get_type_hints(cls)
-        return cls(**{
-            field: parse_response(fieldtypes[field], data[field])
-            for field in data if field in fieldtypes
-    })
+    try: 
+        if isinstance(data, list):
+            return[parse_response(cls.__args__[0], item) for item in data]
+        if is_dataclass(cls):
+            fieldtypes = get_type_hints(cls)
+            return cls(**{
+                field: parse_response(fieldtypes[field], data[field])
+                for field in data if field in fieldtypes
+        })
+    except Exception as error:
+        logger.error(f"1{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
+        sys.exit(1)
     return data
         
