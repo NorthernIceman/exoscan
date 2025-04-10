@@ -4,6 +4,7 @@ from log_conf.logger import logger, set_logging_config
 from exoscan.lib.banner import print_banner
 from exoscan.lib.parser import parser
 from exoscan.lib.controls.controls_loader import fetch_controls
+from exoscan.lib.controls.execute_controls import execute_controls
 import requests, sys
 
 def exoscan():
@@ -19,16 +20,10 @@ def exoscan():
 
     auth = authenticate() #retreive auth header for response
 
-    fetch_controls()
-    
+    controls_to_execute = fetch_controls()
+    execute_controls(controls_to_execute)
 
-
-
-    #start checks
-
-    
     #ToDo: 
-    # take compliance file ? 
     # execute checks
 
 if __name__ == "__main__":

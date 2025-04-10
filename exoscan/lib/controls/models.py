@@ -39,6 +39,9 @@ class ControlMeta(BaseModel):
             control_path = control_info[1]
             metadata_file = f"{control_path}/{control_name}.metadata.json"
 
+######################continue here###################
+
+
     @staticmethod
     def list(
         bulk_controls_meta: dict = None

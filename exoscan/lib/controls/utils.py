@@ -8,7 +8,11 @@ def import_all_controls(services: str = None) -> list[tuple]:
         controls = []
         modules = []
 
-        modules += fetch_modules()
+        module_path = f"exoscan.lib.controls"
+        modules = walk_packages(
+        importlib.import_module(module_path).__path__,
+        importlib.import_module(module_path).__name__ + "."
+        )
         
         for module_name in modules:
             control_module_name = module_name.name
@@ -24,14 +28,3 @@ def import_all_controls(services: str = None) -> list[tuple]:
         sys.exit(1)
     else:
         return controls
-    
-
-def fetch_modules():
-    
-    module_path = f"exoscan.lib.controls"
-    # if service: 
-    #     module_path += f".{service}"
-    return walk_packages(
-        importlib.import_module(module_path).__path__,
-        importlib.import_module(module_path).__name__ + "."
-    )
