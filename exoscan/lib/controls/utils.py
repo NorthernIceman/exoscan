@@ -1,8 +1,11 @@
-import sys, importlib, os
+import sys, importlib
+from typing import Any, get_type_hints, Union
+from dataclasses import is_dataclass
 from pkgutil import walk_packages
 from log_conf.logger import logger
 
 
+#looks for paths with controls in them in exoscan.lib.controls and returns them to calling function as list
 def import_all_controls(services: str = None) -> list[tuple]:
     try: 
         controls = []
@@ -28,3 +31,16 @@ def import_all_controls(services: str = None) -> list[tuple]:
         sys.exit(1)
     else:
         return controls
+    
+
+def parse_response(cls, data: Any):
+    if isinstance(data, list):
+        return[parse_response(cls.__args__[0], item) for item in data]
+    if is_dataclass(cls):
+        fieldtypes = get_type_hints(cls)
+        return cls(**{
+            field: parse_response(fieldtypes[field], data[field])
+            for field in data if field in fieldtypes
+    })
+    return data
+        

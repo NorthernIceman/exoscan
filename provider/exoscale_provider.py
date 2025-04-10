@@ -11,20 +11,20 @@ def authenticate(): #returns the authentication header after parsing the file co
         api_secret_line = file.readline()
         if ("XXXXXX" in (api_key_line or api_secret_line)):
             logger.info("No credentials supplied! Please submit them in provider/credentials.txt")
-            return
+            sys.exit(1)
         else:
             API_KEY = api_key_line.split("=")[1].strip().strip('"').strip("'")
             API_SECRET = api_secret_line.split("=")[1].strip().strip('"').strip("'")
             auth = ExoscaleV2Auth(API_KEY, API_SECRET)
             response = requests.get("https://api-ch-gva-2.exoscale.com/v2/", auth=auth)  #requests must iterate through every region
             
-            #verify if API-Access is successful 
-            logger.info("Trying to log into exoscale with provided credentials...")
-            if response.status_code == 204:
-                logger.info("Authentication successful.")
-            else:
-                logger.error("Authentication not successful. Aborting...")
-                sys.exit(-1)
+            # #verify if API-Access is successful 
+            # logger.info("Trying to log into exoscale with provided credentials...")
+            # if response.status_code == 204:
+            #     logger.info("Authentication successful.")
+            # else:
+            #     logger.error("Authentication not successful. Aborting...")
+            #     sys.exit(1)
             return auth
     except (FileExistsError, FileNotFoundError):
         logger.error("File could not be opened or does not exist.")

@@ -24,30 +24,6 @@ class ControlMeta(BaseModel):
     service: str
     recommendation: str
     Severity: Severity
-
-    # @field_validator("Severity", mode='before')
-    # def severity_lower(severity):
-    #     return severity.lower()
-    
-    @staticmethod
-    def get_all_controls(category: str = None) -> dict[str, "ControlMeta"]: # return dictionary of ControlMeta with control_name as key
-        all_controls = {}
-        controls = import_all_controls()
-
-        for control_info in controls:
-            control_name = control_info[0]
-            control_path = control_info[1]
-            metadata_file = f"{control_path}/{control_name}.metadata.json"
-
-######################continue here###################
-
-
-    @staticmethod
-    def list(
-        bulk_controls_meta: dict = None
-    ) -> Set["ControlMeta"]:
-        if not bulk_controls_meta: 
-            bulk_controls_meta = ControlMeta.get_all_controls()
         
         
 
@@ -99,23 +75,25 @@ class PrivateNetwork:
 
 @dataclass
 class Template:
-    maintainer: str
-    description: str
-    ssh_key_enabled: bool
-    family: str
-    name: str
-    default_user: str
-    size: int
-    password_enabled: bool
-    build: str
-    checksum: str
-    boot_mode: str
-    id: str
-    zones: List[str]
-    url: str
-    version: str
-    created_at: datetime
-    visibility: str
+    dataclass
+class Template:
+    maintainer: Optional[str] = None
+    description: Optional[str] = None
+    ssh_key_enabled: Optional[bool] = None
+    family: Optional[str] = None
+    name: Optional[str] = None
+    default_user: Optional[str] = None
+    size: Optional[int] = None
+    password_enabled: Optional[bool] = None
+    build: Optional[str] = None
+    checksum: Optional[str] = None
+    boot_mode: Optional[str] = None
+    zones: Optional[List[str]] = None
+    url: Optional[str] = None
+    version: Optional[str] = None
+    created_at: Optional[str] = None
+    visibility: Optional[str] = None
+    id: Optional[str] = None
 
 @dataclass
 class SSHKey:
@@ -129,22 +107,22 @@ class Manager:
 
 @dataclass
 class Instance:
-    public_ip_assignment: str
-    labels: Dict[str, str]
-    security_groups: List[SecurityGroup]
-    name: str
-    instance_type: InstanceType
-    private_networks: List[PrivateNetwork]
-    template: Template
-    state: str
-    ssh_key: SSHKey
-    mac_address: str
-    manager: Manager
-    ipv6_address: str
-    id: str
-    ssh_keys: List[SSHKey]
-    created_at: datetime
-    public_ip: str
+    public_ip_assignment: Optional[str] = None
+    labels: Optional[Dict[str, str]] = None
+    security_groups: Optional[List[SecurityGroup]] = None
+    name: Optional[str] = None
+    instance_type: Optional[InstanceType] = None
+    private_networks: Optional[List[PrivateNetwork]] = None
+    template: Optional[{Template}] = None
+    state: Optional[str] = None
+    ssh_key: Optional[SSHKey] = None
+    mac_address: Optional[str] = None
+    manager: Optional[Manager] = None
+    ipv6_address: Optional[str] = None
+    id: Optional[str] = None
+    ssh_keys: Optional[List[SSHKey]] = None
+    created_at: Optional[datetime] = None
+    public_ip: Optional[str] = None
 
 @dataclass
 class InstanceContainer:

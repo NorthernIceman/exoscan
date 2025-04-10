@@ -3,7 +3,7 @@ from exoscan.lib.controls.models import ControlMeta, Control
 from exoscan.lib.controls.utils import import_all_controls
 from log_conf.logger import logger
 
-
+#tasks function in utils to get it all directories with controls in them, then parses them to modules and passes them to main()
 def fetch_controls() -> set: 
     try:
         logger.info("Fetching controls...")

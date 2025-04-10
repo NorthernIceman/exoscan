@@ -18,13 +18,10 @@ def exoscan():
     #set logging level
     set_logging_config(args.Verbose)
 
-    auth = authenticate() #retreive auth header for response
-
     controls_to_execute = fetch_controls()
     execute_controls(controls_to_execute)
 
-    #ToDo: 
-    # execute checks
+    #TODO: cleanup all inventory files after program is done
 
 if __name__ == "__main__":
     exoscan()
