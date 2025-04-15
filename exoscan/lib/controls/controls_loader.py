@@ -1,5 +1,4 @@
 
-from exoscan.lib.controls.models import ControlMeta, Control
 from exoscan.lib.controls.utils import import_all_controls
 from log_conf.logger import logger
 

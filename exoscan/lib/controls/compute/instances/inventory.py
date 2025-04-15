@@ -2,7 +2,6 @@ import requests, os, json, sys
 from provider.exoscale_provider import authenticate
 from exoscan.lib.controls.models import Instance, InstanceContainer
 from provider.return_regions import return_regions
-from exoscan.lib.controls.utils import parse_response
 from log_conf.logger import logger 
 
 #here shall be functions to build an inventory, iterate through all regions and list the instances. 
@@ -15,7 +14,6 @@ def get_instances() -> InstanceContainer:
         if os.path.exists(cache_file):
             with open(cache_file, "r") as f:
                 json_data = json.load(f)
-                print(json_data)
         else: 
             logger.info("Creating Inventory of instances...")
             auth = authenticate()
@@ -34,6 +32,7 @@ def get_instances() -> InstanceContainer:
         logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
         sys.exit(1)
 
-    return parse_response(InstanceContainer, json_data)
+    # ✅ Let Pydantic do the parsing
+    return InstanceContainer.parse_obj(json_data)
 
 

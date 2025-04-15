@@ -1,13 +1,12 @@
 from abc import abstractmethod
-from typing import Set, Dict, Any
-import sys, os
+from typing import Dict, Any
+import json
 from dataclasses import dataclass
 from typing import List, Dict, Optional
 from datetime import datetime
-from pydantic import BaseModel, ValidationError, field_validator
+from pydantic import BaseModel, Field
 from enum import Enum
-
-from exoscan.lib.controls.utils import import_all_controls
+from pathlib import Path
 
 
 class Severity(str, Enum):
@@ -25,40 +24,56 @@ class ControlMeta(BaseModel):
     recommendation: str
     Severity: Severity
         
+class ControlMetadata(BaseModel):
+    severity: Severity
+    control_name: str
+    control_description: str
+    risk: str
+    recommendation: str
+
+    @classmethod
+    def from_file(cls, path: str) -> "ControlMetadata":
+        with open(path) as f:
+            raw = json.load(f)
+        return cls.model_validate(raw)
         
+class Finding(BaseModel):
+    ControlMetadata: ControlMetadata
+    resource_description: str #refactor so it is ResourceDescription with an alias
 
-class Control(ControlMeta):
+    @classmethod
+    def from_metadata(cls, metadata_file: str, resource_description: str):
+        metadata_path = Path(metadata_file)
+        with open(metadata_path, "r") as f:
+            meta_data = json.load(f)
 
-    def __init__(self, **data):
-        metadata_file = (
-            os.path.abspath(sys.modules[self.__module__].__file__)[:-3]
-            + ".metadata.json"
-        )
-        print(metadata_file)
-        data = ControlMeta.parse_file(metadata_file).model_dump()
-        super().__init__(**data)
-
-    def metadata(self) -> dict:
-        return self.model_dump_json()
+        control_metadata = ControlMetadata.model_validate(meta_data)
+        return cls(ControlMetadata=control_metadata, resource_description=resource_description)
     
-    @abstractmethod
-    def execute(self) -> list:
-        """Execute controls logic"""
+    def format_finding(self) -> str:
+        meta = self.ControlMetadata
+        lines = [
+            "-" * 71,
+            f"{meta.severity.upper()} - {meta.control_name} - {self.resource_description}",
+            "",
+            f"  - Description: {meta.control_description}",
+            f"  - Risk: {meta.risk}",
+            f"  - Recommendation: {meta.recommendation}"
+        ]
+        return "\n".join(lines)
+
+    def print_finding(self) -> None:
+        print(self.format_finding())
+
     
 
-
-
-
-
-@dataclass
-class SecurityGroup:
+class SecurityGroup(BaseModel):
     id: str
     name: str
     description: str
     external_sources: List[str]
 
-@dataclass
-class InstanceType:
+class InstanceType(BaseModel):
     id: str
     size: str
     family: str
@@ -68,15 +83,11 @@ class InstanceType:
     memory: int
     zones: List[str]
 
-@dataclass
-class PrivateNetwork:
+class PrivateNetwork(BaseModel):
     id: str
     mac_address: str
 
-@dataclass
-class Template:
-    dataclass
-class Template:
+class Template(BaseModel):
     maintainer: Optional[str] = None
     description: Optional[str] = None
     ssh_key_enabled: Optional[bool] = None
@@ -95,36 +106,37 @@ class Template:
     visibility: Optional[str] = None
     id: Optional[str] = None
 
-@dataclass
-class SSHKey:
+class SSHKey(BaseModel):
     name: str
     fingerprint: str
 
-@dataclass
-class Manager:
+class Manager(BaseModel):
     id: str
     type: str
 
-@dataclass
-class Instance:
+
+class Instance(BaseModel):
     public_ip_assignment: Optional[str] = None
     labels: Optional[Dict[str, str]] = None
-    security_groups: Optional[List[SecurityGroup]] = None
+    security_groups: Optional[List["SecurityGroup"]] = None
     name: Optional[str] = None
-    instance_type: Optional[InstanceType] = None
-    private_networks: Optional[List[PrivateNetwork]] = None
-    template: Optional[{Template}] = None
+    instance_type: Optional["InstanceType"] = None
+    private_networks: Optional[List["PrivateNetwork"]] = None
+    template: Optional["Template"] = None
     state: Optional[str] = None
-    ssh_key: Optional[SSHKey] = None
+    ssh_key: Optional["SSHKey"] = None
     mac_address: Optional[str] = None
-    manager: Optional[Manager] = None
+    manager: Optional["Manager"] = None
     ipv6_address: Optional[str] = None
     id: Optional[str] = None
-    ssh_keys: Optional[List[SSHKey]] = None
-    created_at: Optional[datetime] = None
+    ssh_keys: Optional[List["SSHKey"]] = None
+    created_at: Optional[datetime] = Field(default=None, alias="created-at")
     public_ip: Optional[str] = None
 
-@dataclass
-class InstanceContainer:
+    class Config:
+        validate_by_name = True
+
+
+class InstanceContainer(BaseModel):
     instances: List[Instance]
 

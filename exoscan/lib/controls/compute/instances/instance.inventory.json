@@ -1,3 +1,39 @@
 {
-  "instances": []
+  "instances": [
+    {
+      "anti-affinity-groups": [],
+      "public-ip-assignment": "inet4",
+      "labels": {},
+      "security-groups": [
+        {
+          "id": "c901ec09-90ec-43cf-a10b-53fbc8e8a4c2"
+        }
+      ],
+      "elastic-ips": [],
+      "name": "test1234",
+      "instance-type": {
+        "id": "b6e9d1e8-89fc-4db3-aaa4-9b4c5b1d0844"
+      },
+      "private-networks": [],
+      "template": {
+        "id": "3f70c344-36f4-4784-bd17-e9e12e7ba7c5"
+      },
+      "state": "running",
+      "ssh-key": {
+        "name": "Iceman"
+      },
+      "mac-address": "06:27:4e:00:04:d5",
+      "tpm-enabled": false,
+      "id": "7c7b3fc8-1d94-4be0-8d40-49d769c56279",
+      "snapshots": [],
+      "ssh-keys": [
+        {
+          "name": "Iceman"
+        }
+      ],
+      "created-at": "2025-04-14T20:35:09Z",
+      "public-ip": "159.100.252.210",
+      "block-storage-volumes": []
+    }
+  ]
 }

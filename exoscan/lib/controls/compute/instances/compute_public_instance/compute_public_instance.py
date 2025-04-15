@@ -3,7 +3,7 @@ from exoscan.lib.controls.compute.instances.inventory import get_instances
 from exoscan.lib.controls.models import Instance, InstanceContainer
 from log_conf.logger import logger
 
-def execute_logic():
+def execute_logic(metadata_path):
     try: 
         all_instances = get_instances()
         if not all_instances.instances: 

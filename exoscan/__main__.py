@@ -18,8 +18,12 @@ def exoscan():
     #set logging level
     set_logging_config(args.Verbose)
 
+    findings = []
     controls_to_execute = fetch_controls()
-    execute_controls(controls_to_execute)
+    findings.extend(execute_controls(controls_to_execute))
+
+    for finding in findings:
+        finding.print_finding()
 
     #TODO: cleanup all inventory files after program is done
 
