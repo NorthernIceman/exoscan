@@ -18,11 +18,25 @@ def get_instances() -> InstanceContainer:
             logger.info("Creating Inventory of instances...")
             auth = authenticate()
             all_instances = []
+            instance_reference = []
             regions = return_regions()
         
             for region in regions:
                 response = requests.get(f"https://api-{region}.exoscale.com/v2/instance", auth=auth).json()
-                all_instances.extend(response.get("instances", []))
+                for instance in response.get("instances", []):
+                    instance_id = instance.get("id")
+                    if instance_id:
+                        instance_reference.append({"region": region, "id": instance_id})
+            
+            for ref in instance_reference:
+                region = ref["region"]
+                instance_id = ref["id"]
+                detail_url = f"https://api-{region}.exoscale.com/v2/instance/{instance_id}"
+                detail_response = requests.get(detail_url, auth=auth)
+                if detail_response.status_code == 200:
+                    all_instances.append(detail_response.json())
+                else:
+                    logger.warning(f"Failed to fetch details for instance {instance_id} in {region}")
             
             json_data = {"instances": all_instances}
 
@@ -32,7 +46,6 @@ def get_instances() -> InstanceContainer:
         logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
         sys.exit(1)
 
-    # ✅ Let Pydantic do the parsing
-    return InstanceContainer.parse_obj(json_data)
+    return InstanceContainer.model_validate(json_data)
 
 

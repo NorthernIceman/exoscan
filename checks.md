@@ -7,7 +7,7 @@ State: March 2025
  - default user of template still enabled?
  - authorized or publicly available?
  - 80 % of instances in same zone
- - created long ago
+ - ***created long ago***
  - Instance Public facing?
  - userdata contains passwords
  - default sec-group used

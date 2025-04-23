@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_instance_without_snapshot",
+    "control_description": "Check if any instance snapshot exists.",
+    "risk": "Regular Snapshots are an integral part for every backup strategy and data recovery process.",
+    "recommendation": "Make sure to create snapshots of important machines regularly.",
+    "severity": "medium"
+}

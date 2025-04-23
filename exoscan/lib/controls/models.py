@@ -53,12 +53,13 @@ class Finding(BaseModel):
     def format_finding(self) -> str:
         meta = self.ControlMetadata
         lines = [
-            "-" * 71,
+            "-" * 80,
             f"{meta.severity.upper()} - {meta.control_name} - {self.resource_description}",
             "",
             f"  - Description: {meta.control_description}",
             f"  - Risk: {meta.risk}",
-            f"  - Recommendation: {meta.recommendation}"
+            f"  - Recommendation: {meta.recommendation}",
+            ""
         ]
         return "\n".join(lines)
 
@@ -86,6 +87,13 @@ class InstanceType(BaseModel):
 class PrivateNetwork(BaseModel):
     id: str
     mac_address: str
+
+class PrivateNetwork(BaseModel):
+    id: Optional[str] = None
+
+class ElasticIP(BaseModel):
+    ip: str
+    id: str
 
 class Template(BaseModel):
     maintainer: Optional[str] = None
@@ -118,20 +126,26 @@ class Manager(BaseModel):
 class Instance(BaseModel):
     public_ip_assignment: Optional[str] = None
     labels: Optional[Dict[str, str]] = None
-    security_groups: Optional[List["SecurityGroup"]] = None
+    security_groups: Optional[List[SecurityGroup]] = None
     name: Optional[str] = None
-    instance_type: Optional["InstanceType"] = None
-    private_networks: Optional[List["PrivateNetwork"]] = None
-    template: Optional["Template"] = None
+    instance_type: Optional[InstanceType] = None
+    private_networks: Optional[List[PrivateNetwork]] = None
+    template: Optional[Template] = None
     state: Optional[str] = None
-    ssh_key: Optional["SSHKey"] = None
-    mac_address: Optional[str] = None
-    manager: Optional["Manager"] = None
-    ipv6_address: Optional[str] = None
+    ssh_key: Optional[SSHKey] = None
+    mac_address: Optional[str] = Field(default=None, alias="mac-address")
+    manager: Optional[Any] = None  # Define this if needed
+    ipv6_address: Optional[str] = Field(default=None, alias="ipv6-address")
     id: Optional[str] = None
-    ssh_keys: Optional[List["SSHKey"]] = None
+    ssh_keys: Optional[List[SSHKey]] = None
     created_at: Optional[datetime] = Field(default=None, alias="created-at")
-    public_ip: Optional[str] = None
+    public_ip: Optional[str] = Field(default=None, alias="public-ip")
+    disk_size: Optional[int] = Field(default=None, alias="disk-size")
+    anti_affinity_groups: Optional[List[Dict[str, Any]]] = Field(default=None, alias="anti-affinity-groups")
+    elastic_ips: Optional[List[ElasticIP]] = Field(default=None, alias="elastic-ips")
+    user_data: Optional[str] = Field(default=None, alias="user-data")
+    snapshots: Optional[List[Any]] = None
+    block_storage_volumes: Optional[List[Any]] = Field(default=None, alias="block-storage-volumes")
 
     class Config:
         validate_by_name = True
