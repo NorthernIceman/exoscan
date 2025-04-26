@@ -12,13 +12,12 @@ def execute_logic(metadata_path):
         if not all_instances.instances: 
             logger.info("No instances found. Skipping Control compute_old_instance...")
             return
-        threshold = datetime.now(timezone.utc) - timedelta(days=0)
+        threshold = datetime.now(timezone.utc) - timedelta(days=90)
         findings = []
 
         logger.info("Executing control: compute_old_instance")
 
         for instance in all_instances.instances:
-            print(instance.elastic_ips[0].ip)
             if instance.created_at < threshold:
                 findings.append(Finding.from_metadata(
                     metadata_file= metadata_path,

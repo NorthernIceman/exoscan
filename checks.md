@@ -8,6 +8,7 @@ State: March 2025
  - authorized or publicly available?
  - 80 % of instances in same zone
  - ***created long ago***
+ - ***no snapshot for instance***
  - Instance Public facing?
  - userdata contains passwords
  - default sec-group used
