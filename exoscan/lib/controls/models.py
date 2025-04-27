@@ -67,6 +67,36 @@ class Finding(BaseModel):
         print(self.format_finding())
 
 
+
+class SecurityGroupRule(BaseModel):
+    id: Optional[str] = None
+    description: Optional[str] = None
+    start_port: Optional[int] = Field(default=None, alias="start-port")
+    end_port: Optional[int] = Field(default=None, alias="end-port")
+    protocol: Optional[str] = None
+    network: Optional[str] = None
+    flow_direction: Optional[str] = Field(default=None, alias="flow-direction")
+
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
+#no region because sg are global
+class SecurityGroup(BaseModel):
+    id: str
+    name: Optional[str]
+    description: Optional[str]
+    rules: Optional[List[SecurityGroupRule]]
+
+    class Config:
+        validate_assignment = True
+        validate_assignment = True
+
+class SecurityGroupContainer(BaseModel):
+    security_groups: List[SecurityGroup]
+
+
+
 class InstanceType(BaseModel):
     id: str
     size: str
@@ -144,36 +174,11 @@ class Instance(BaseModel):
 
     class Config:
         validate_by_name = True
+        validate_assignment = True
 
 
 class InstanceContainer(BaseModel):
     instances: List[Instance]
 
 
-class SecurityGroupRule(BaseModel):
-    id: Optional[str] = None
-    description: Optional[str] = None
-    start_port: Optional[int] = Field(default=None, alias="start-port")
-    end_port: Optional[int] = Field(default=None, alias="end-port")
-    protocol: Optional[str] = None
-    network: Optional[str] = None
-    flow_direction: Optional[str] = Field(default=None, alias="flow-direction")
-
-    class Config:
-        allow_population_by_field_name = True
-        validate_assignment = True
-
-#no region because sg are global
-class SecurityGroup(BaseModel):
-    id: str
-    name: Optional[str]
-    description: Optional[str]
-    rules: Optional[List[SecurityGroupRule]]
-
-    class Config:
-        allow_population_by_field_name = True
-        validate_assignment = True
-
-class SecurityGroupContainer(BaseModel):
-    security_groups: List[SecurityGroup]
 
