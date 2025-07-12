@@ -1,0 +1,9 @@
+12.07.: 
+    reworked model to accept forward references
+    added security-groups to model security-group-rules because it can be chosen instead of networks
+    removed possible error if network = null in security-models. (split())
+    added control compute_security_groups_allow_ingress_from_internet_to_risky_ports
+    reworked Output system, so not every port or every rule generates one message, extendet to other controls in security_groups
+    added compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+    added compute_security_groups_allow_ingress_from_internet_to_database_ports
+    added compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports

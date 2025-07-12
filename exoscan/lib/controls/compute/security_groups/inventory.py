@@ -12,6 +12,7 @@ def get_security_groups(
 ) -> SecurityGroupContainer | SecurityGroup:
 
     try: 
+
         if os.path.exists(CACHE_FILE):
                 with open(CACHE_FILE, "r") as f:
                     json_data = json.load(f)
@@ -20,9 +21,10 @@ def get_security_groups(
             auth = authenticate()
 
             # with security-groups, region does not matter
-            response = requests.get(f"https://api-ch-gva-2.exoscale.com/v2/security-group", auth=auth).json()
+            json_data = requests.get(f"https://api-ch-gva-2.exoscale.com/v2/security-group", auth=auth).json()
             with open(CACHE_FILE, "w") as f:
                 json.dump(json_data, f, indent=2)
+
         sg_container = SecurityGroupContainer.model_validate(json_data)
 
         if security_group_id:

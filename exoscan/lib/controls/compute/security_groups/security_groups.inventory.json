@@ -1,0 +1,138 @@
+{
+  "security-groups": [
+    {
+      "description": "Default Security Group",
+      "name": "default",
+      "rules": [
+        {
+          "description": "SSH",
+          "start-port": 22,
+          "protocol": "tcp",
+          "end-port": 22,
+          "id": "03a75d18-81d8-4113-861c-57e1e8a8df2e",
+          "network": "0.0.0.0/0",
+          "flow-direction": "ingress"
+        }
+      ],
+      "id": "c901ec09-90ec-43cf-a10b-53fbc8e8a4c2",
+      "visibility": "private"
+    },
+    {
+      "description": "",
+      "name": "test123",
+      "external-sources": [
+        "8.8.8.8/32"
+      ],
+      "rules": [
+        {
+          "description": "Ping",
+          "protocol": "icmp",
+          "icmp": {
+            "type": 8,
+            "code": 0
+          },
+          "id": "08a871c2-071d-47b9-a555-fb80183de974",
+          "network": "0.0.0.0/0",
+          "flow-direction": "ingress"
+        },
+        {
+          "description": "RDP",
+          "start-port": 3389,
+          "protocol": "tcp",
+          "end-port": 3389,
+          "id": "769842ad-a8c5-4f0e-8f22-a7a76dfc11cd",
+          "network": "0.0.0.0/0",
+          "flow-direction": "ingress"
+        },
+        {
+          "description": "SSH",
+          "start-port": 22,
+          "protocol": "tcp",
+          "end-port": 22,
+          "id": "17b8b50d-9d67-4d0e-947d-d010c062d4a3",
+          "network": "0.0.0.0/0",
+          "flow-direction": "ingress"
+        },
+        {
+          "description": "",
+          "start-port": 1,
+          "protocol": "tcp",
+          "end-port": 65535,
+          "id": "18752c0d-5f69-47ce-b1fd-7f5d8052e651",
+          "network": "0.0.0.0/0",
+          "flow-direction": "ingress"
+        },
+        {
+          "description": "",
+          "start-port": 80,
+          "protocol": "tcp",
+          "end-port": 1024,
+          "security-group": {
+            "name": "test123",
+            "id": "af94b19e-3d1d-4960-a4ab-12ebf0374c83"
+          },
+          "id": "5fa9691a-20ee-4f61-b408-3302f5ff1925",
+          "flow-direction": "ingress"
+        }
+      ],
+      "id": "af94b19e-3d1d-4960-a4ab-12ebf0374c83",
+      "visibility": "private"
+    },
+    {
+      "description": "testgroup",
+      "name": "test234",
+      "external-sources": [
+        "91.219.68.4/32"
+      ],
+      "rules": [
+        {
+          "description": "",
+          "start-port": 1,
+          "protocol": "tcp",
+          "end-port": 65535,
+          "id": "f641cc26-f637-4cd2-90b3-c7d3890e343f",
+          "network": "0.0.0.0/0",
+          "flow-direction": "ingress"
+        },
+        {
+          "description": "",
+          "start-port": 80,
+          "protocol": "tcp",
+          "end-port": 80,
+          "id": "bc77e7c4-4a43-4be7-8957-c5901d04bba0",
+          "network": "127.0.0.0/8",
+          "flow-direction": "ingress"
+        },
+        {
+          "description": "",
+          "start-port": 1,
+          "protocol": "udp",
+          "end-port": 65535,
+          "id": "d9438284-eaa3-4bc7-a861-b431c38d3582",
+          "network": "127.0.0.0/8",
+          "flow-direction": "ingress"
+        },
+        {
+          "description": "SSH",
+          "start-port": 22,
+          "protocol": "tcp",
+          "end-port": 22,
+          "id": "3f1d8b6b-8780-4454-8d6c-d6a4cba8dc4e",
+          "network": "0.0.0.0/0",
+          "flow-direction": "ingress"
+        },
+        {
+          "description": "",
+          "start-port": 80,
+          "protocol": "tcp",
+          "end-port": 80,
+          "id": "f3b8122b-542b-4813-9877-0c692ad809e1",
+          "network": "::0/0",
+          "flow-direction": "ingress"
+        }
+      ],
+      "id": "33b9c4a6-415a-4f47-bbd3-c8a5b9733203",
+      "visibility": "private"
+    }
+  ]
+}

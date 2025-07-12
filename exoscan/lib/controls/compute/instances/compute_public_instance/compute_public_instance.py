@@ -10,8 +10,8 @@ def execute_logic(metadata_path):
             logger.info("No instances found. Skipping Control compute_public_instance...")
             return
         
-
+    #ToDo: get for each instance (with public ip) the security group and check if both allow access (complete, ports, etc. )
     except Exception as error:
-        logger.error(f"1{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
+        logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
         sys.exit(1)
     return

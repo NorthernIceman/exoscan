@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_security_groups_allow_ingress_from_large_ipv4_blocks",
+    "control_description": "Check if any security group allows ingress from large IPv4 address spaces.",
+    "risk": "Security-Group allows inbound traffic on layer 3 from large IPv4 address spaces.",
+    "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
+    "severity": "medium"
+}

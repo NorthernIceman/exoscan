@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_security_groups_allow_ingress_from_internet_to_risky_ports",
+    "control_description": "Check if any security group allows ingress from 0.0.0.0/0 or ::0/0 to the ports 21(FTP), 25(SMTP), 110(POP3), 135(RCP), 143(IMAP), 445(CIFS), 3000(Go, Node.js, Ruby web developemnt frameworks), 4333(ahsp), 5000(Python web dev frameworks).",
+    "risk": "Wide-open security groups increase the attack surface.",
+    "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
+    "severity": "high"
+}

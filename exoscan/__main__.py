@@ -20,6 +20,7 @@ def exoscan():
 
     findings = []
     controls_to_execute = fetch_controls()
+
     findings.extend(execute_controls(controls_to_execute))
 
     for finding in findings:

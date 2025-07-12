@@ -21,11 +21,12 @@ def import_all_controls(services: str = None) -> list[tuple]:
             control_module_name = module_name.name
 
             if (control_module_name.count(".") == 6):
+
                 control_path = module_name.module_finder.path
                 control_name = control_module_name.split(".")[-1]
                 control_info = (control_name, control_path)
                 controls.append(control_info)
-
+        for i in controls: print(",",i)
     except Exception as e:
         logger.critical(f"{e.__class__.__name__}[{e.__traceback__.tb_lineno}]: {e}")
         sys.exit(1)

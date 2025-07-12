@@ -228,6 +228,8 @@ state -> error: retreve all with state error (inventory?)
 password login disabled and no sshkey? no login - still pays
 check certificate stuff in sks?
 
+why all ports seperately? -> because of Metadata and more precise interpretation of results
+
 # impossible
 XX - ssh-key-age: data not available 
 XX - snapshots encrypted : data not available
