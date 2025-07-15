@@ -4,15 +4,15 @@ State: March 2025
  - instance type large -> does it need to be this large?
  - gpus to instances attributed - necessary?
  - template EoL
- - default user of template still enabled?
+ - default user of template still enabled? - impossible
  - authorized or publicly available?
- - 80 % of instances in same zone
- - ***created long ago***
- - ***no snapshot for instance***
- - Instance Public facing?
+ - ***80 % of instances in same zone***
+ - ***created long ago*** y
+ - ***no snapshot for instance*** y
+ - Instance Public facing? - done by checks below
  - userdata contains passwords
  - default sec-group used
- - specific ports exposed to internet (sec-group + instance public)
+ - specific ports exposed to internet (sec-group + instance public) y
     - cassandra (TCP 7000, 7001, 7199, 9042, 9160)
     - elasticsearch/kibana
     - cifs
@@ -116,10 +116,10 @@ Elastic IP unassigned
  - any dangers with too big private networks?
  - maybe subnet almost full - threshold of 80% of ip leases of network
 
-#### ssh-keys (D) 1
+#### ssh-keys (D) 1 y
 Info - are all ssh-keys used?
 
-#### Anti-Affinity Groups (D) 0
+#### Anti-Affinity Groups (D) 0 y
 no checks itself, but influences other services
 
 # Storage ca.15

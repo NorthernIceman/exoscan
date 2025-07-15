@@ -28,8 +28,8 @@
         "id": "71004023-bb72-4a97-b1e9-bc66dfce9470",
         "size": null,
         "family": null,
-        "cpus": null,
-        "gpus": null,
+        "cpus": 4,
+        "gpus": 4,
         "authorized": null,
         "memory": null,
         "zones": null
@@ -138,6 +138,73 @@
       "snapshots": [],
       "block-storage-volumes": [],
       "region": "ch-dk-2"
+    },
+    {
+      "public-ip-assignment": "inet4",
+      "labels": {},
+      "security-groups": [
+        {
+          "id": "33b9c4a6-415a-4f47-bbd3-c8a5b9733203",
+          "name": null,
+          "description": null,
+          "rules": null
+        }
+      ],
+      "name": "VM-c0f72a5d-e898-4553-a335-faad393241e3",
+      "instance-type": {
+        "id": "71004023-bb72-4a97-b1e9-bc66dfce9470",
+        "size": null,
+        "family": null,
+        "cpus": null,
+        "gpus": null,
+        "authorized": null,
+        "memory": null,
+        "zones": null
+      },
+      "private-networks": [],
+      "template": {
+        "maintainer": null,
+        "description": null,
+        "ssh-key-enabled": null,
+        "family": null,
+        "name": null,
+        "default-user": null,
+        "size": null,
+        "password-enabled": null,
+        "build": null,
+        "checksum": null,
+        "boot-mode": null,
+        "zones": null,
+        "url": null,
+        "version": null,
+        "created-at": null,
+        "visibility": null,
+        "id": "cd6c18eb-1cc6-471a-ae9b-8a8f0e7ce507"
+      },
+      "state": "stopped",
+      "ssh-key": {
+        "name": "Iceman",
+        "fingerprint": null
+      },
+      "mac-address": null,
+      "manager": null,
+      "ipv6-address": null,
+      "id": "c0f72a5d-e898-4553-a335-faad393241e3",
+      "ssh-keys": [
+        {
+          "name": "Iceman",
+          "fingerprint": null
+        }
+      ],
+      "created-at": "2025-07-15T21:06:21Z",
+      "public-ip": null,
+      "disk-size": null,
+      "anti-affinity-groups": [],
+      "elastic-ips": [],
+      "user-data": null,
+      "snapshots": [],
+      "block-storage-volumes": [],
+      "region": "de-fra-1"
     }
   ]
 }

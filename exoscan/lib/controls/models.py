@@ -80,7 +80,6 @@ class SecurityGroupRule(BaseModel):
         validate_by_name = True
         validate_assignment = True
 
-
 #no region because sg are global
 class SecurityGroup(BaseModel):
     id: str
@@ -91,8 +90,6 @@ class SecurityGroup(BaseModel):
     class Config:
         validate_by_name = True
         validate_assignment = True
-
-
 
 class SecurityGroupContainer(BaseModel):
     security_groups: List[SecurityGroup] = Field(default=None, alias="security-groups")
