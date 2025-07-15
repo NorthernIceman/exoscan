@@ -5,14 +5,14 @@ from exoscan.lib.controls.models import Finding
 from log_conf.logger import logger
 
 def execute_logic(metadata_path):
-    logger.info("Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports")
+    logger.info("Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports")
     try: 
         all_sg = get_security_groups()
         if not all_sg.security_groups: 
-            logger.info("No Security-Groups found. Skipping Control compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports...")
+            logger.info("No Security-Groups found. Skipping Control compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports...")
             return
         findings = []
-        risky_ports = [5601, 9200, 9300]
+        risky_ports = [88, 464, 749, 750, 389, 636]
         found_sg = []
         for sg in all_sg.security_groups:
             risky_rules = []
@@ -34,10 +34,10 @@ def execute_logic(metadata_path):
             findings.append(Finding.from_metadata(
                     metadata_file=metadata_path,
                     resource_description=f"Security-Groups:\n{sgs_str}"
-                ))
+                ))            
         return findings
                 
     except Exception as error:
-        logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
+        logger.error(f"11{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
         sys.exit(1)
     return

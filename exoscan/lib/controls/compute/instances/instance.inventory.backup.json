@@ -1,0 +1,97 @@
+{
+  "instances": [
+    {
+      "anti-affinity-groups": [],
+      "public-ip-assignment": "inet4",
+      "labels": {},
+      "security-groups": [
+        {
+          "id": "c901ec09-90ec-43cf-a10b-53fbc8e8a4c2"
+        }
+      ],
+      "elastic-ips": [
+        {
+          "ip": "194.182.164.99",
+          "id": "e391c209-d602-4fc8-a683-d89cd6edca43"
+        },
+        {
+          "ip": "194.182.188.8",
+          "id": "ad84c1ec-5cb2-4df8-95e4-929f4f28c055"
+        }
+      ],
+      "name": "test1",
+      "instance-type": {
+        "id": "71004023-bb72-4a97-b1e9-bc66dfce9470"
+      },
+      "private-networks": [],
+      "template": {
+        "id": "c71eb1d9-e537-4f92-9832-7089e6e45fae"
+      },
+      "state": "running",
+      "ssh-key": {
+        "name": "Iceman"
+      },
+      "user-data": "IyEvYmluL2Jhc2gKcGFzc3dkIFBhc3N3MHJkCmVjaG8gJ2hlbGxvIHdvcmxkJw==",
+      "mac-address": "06:45:8a:00:12:cd",
+      "tpm-enabled": false,
+      "id": "6d4e316a-e7ba-477f-9f91-8ac11c82941b",
+      "snapshots": [],
+      "disk-size": 50,
+      "ssh-keys": [
+        {
+          "name": "Iceman"
+        }
+      ],
+      "created-at": "2025-04-23T21:08:32Z",
+      "public-ip": "194.182.189.237",
+      "block-storage-volumes": [],
+      "region": "ch-dk-2"
+    },
+    {
+      "anti-affinity-groups": [],
+      "public-ip-assignment": "inet4",
+      "labels": {},
+      "security-groups": [
+        {
+          "id": "c901ec09-90ec-43cf-a10b-53fbc8e8a4c2"
+        }
+      ],
+      "elastic-ips": [
+        {
+          "ip": "194.182.164.99",
+          "id": "e391c209-d602-4fc8-a683-d89cd6edca43"
+        },
+        {
+          "ip": "194.182.188.8",
+          "id": "ad84c1ec-5cb2-4df8-95e4-929f4f28c055"
+        }
+      ],
+      "name": "test3",
+      "instance-type": {
+        "id": "71004023-bb72-4a97-b1e9-bc66dfce9470"
+      },
+      "private-networks": [],
+      "template": {
+        "id": "c71eb1d9-e537-4f92-9832-7089e6e45fae"
+      },
+      "state": "running",
+      "ssh-key": {
+        "name": "Iceman"
+      },
+      "mac-address": "06:89:ac:00:18:40",
+      "tpm-enabled": false,
+      "id": "b7fc97a4-82c4-4d66-8016-fe84bc164d37",
+      "snapshots": [],
+      "disk-size": 10,
+      "ssh-keys": [
+        {
+          "name": "Iceman"
+        }
+      ],
+      "created-at": "2025-04-23T21:09:00Z",
+      "public-ip": "91.92.203.102",
+      "block-storage-volumes": [],
+      "region": "ch-dk-2"
+    }
+  ]
+}

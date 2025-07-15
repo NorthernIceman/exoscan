@@ -13,9 +13,8 @@ CACHE_FILE = "exoscan/lib/controls/compute/instances/instance.inventory.json"
 def get_instances(
         instance_id: str = None
 ) -> InstanceContainer | Instance:
-
-    if instance_id: #if function is called with specific ID (recursively or otherwise)
-        try:
+    try: 
+        if instance_id: #if function is called with specific ID (recursively or otherwise)
             if os.path.exists(CACHE_FILE):
                 with open(CACHE_FILE, "r") as f:
                     json_data = json.load(f)
@@ -27,50 +26,41 @@ def get_instances(
             else: #else not required, keeping it for readability 
                 regions = return_regions()
                 auth = authenticate()
+                detail_response = None
                 for region in regions:
                     detail_url = f"https://api-{region}.exoscale.com/v2/instance/{instance_id}"
                     detail_response = requests.get(detail_url, auth=auth)
-                    if detail_response.status_code == 200: break #end loop if resource is found
+                    if detail_response:
+                        instance_data = detail_response.json()
+                        instance_data["region"] = region
+                        return Instance.model_validate(instance_data) #return details of instance if not yet in cache
+                raise Exception(f"Instance ID {instance_id} not found.")
 
-                instance_data = detail_response.json()
-                instance_data["region"] = region
-                return Instance.model_validate(instance_data) #return details of instance if not yet in cache
-        except Exception as error:
-            logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
-            sys.exit(1)
-
-    #if not called with specific instance        
-    try:
+        #if not called with specific instance        
         if os.path.exists(CACHE_FILE):
             with open(CACHE_FILE, "r") as f:
                 json_data = json.load(f)
         else: 
             logger.info("Creating Inventory of instances...")
-
             regions = return_regions()
             auth = authenticate()
 
             all_instances = []
-            instance_reference = []
             
             #get list of all instances, extract ID and get details based on this reference
             for region in regions: 
                 response = requests.get(f"https://api-{region}.exoscale.com/v2/instance", auth=auth).json()
-                if response.status_code == 200: #maybe no instances in region
+                if response: #maybe no instances in region
                     for instance in response.get("instances", []):
-                        instance_id = instance.get("id")
-                        if instance_id:
-                            instance_reference.append({"region": region, "id": instance_id})
-            
-            for ref in instance_reference:
-                #recursively call this function and thus get details
-                instance_data= get_instances(ref['id'])
-                all_instances.append(instance_data)
-            
-            #write to cache file
+                        instance["region"] = region
+                        all_instances.append(instance)
             json_data = {"instances": all_instances}
+            container = InstanceContainer.model_validate({"instances": all_instances})
+
+            #write to cache file
             with open(CACHE_FILE, "w") as f:
-                json.dump(json_data, f, indent=2)
+                json.dump(container.model_dump(mode="json", by_alias=True), f, indent=2)
+            return container
         return InstanceContainer.model_validate(json_data)
     except Exception as error:
         logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")

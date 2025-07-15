@@ -1,6 +1,6 @@
 {
     "control_name": "compute_security_groups_allow_ingress_from_internet_to_mgmt_ports",
-    "control_description": "Check if any security group allows ingress from 0.0.0.0/0 or ::0/0 to the ports 22(SSH), 23(Telnet), 993(IMAPS), 995(POP3S) and 3389(RDP).",
+    "control_description": "Check if any security group allows ingress from 0.0.0.0/0 or ::0/0 to the ports 5(RJE), 22(SSH), 23(Telnet), 107 (RTelnet), 512 (Exec), 514 (Shell), 992 (TelnetS) and 3389(RDP).",
     "risk": "Wide-open security groups increase the attack surface.",
     "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
     "severity": "high"

@@ -13,19 +13,27 @@ def execute_logic(metadata_path):
             return
         findings = []
         risky_ports = [21, 25, 110, 135, 143, 445, 3000, 4333, 5000]
+        found_sg = []
         for sg in all_sg.security_groups:
             risky_rules = []
             for rule in sg.rules:
-                if rule.network and rule.start_port and rule.end_port: 
-                    conf_risky_ports = []
-                    for port in risky_ports: 
-                        if (rule.network == "0.0.0.0/0" or "::0/0") and (port in range(int(rule.start_port), int(rule.end_port))) and rule.protocol == "tcp":
-                            conf_risky_ports.append(port)
-                    if conf_risky_ports: risky_rules.append(f"(Rule-ID: {rule.id}, Port: {str(conf_risky_ports)})")
-            if risky_rules:             
-                findings.append(Finding.from_metadata(
-                    metadata_file= metadata_path,
-                    resource_description=f"Security-Group: {sg.name} {str(risky_rules)}"
+                if rule.network and rule.start_port and rule.end_port:
+                    if rule.network in ["0.0.0.0/0", "::/0"] and rule.flow_direction == "ingress":
+                        matched_ports = []
+                        for port in risky_ports:
+                            if port in range(int(rule.start_port), int(rule.end_port) + 1):
+                                matched_ports.append(f"{port}/{rule.protocol}")
+                        if matched_ports:
+                            ports_str = ", ".join(sorted(matched_ports))
+                            risky_rules.append(f"(Rule-ID: {rule.id}, Ports: {ports_str})")
+            if risky_rules:
+                rules_str = "\n    ".join(risky_rules)
+                found_sg.append(f" - Security-Group: {sg.name}\n    {rules_str}")
+        if found_sg:
+            sgs_str = "\n".join(found_sg)
+            findings.append(Finding.from_metadata(
+                    metadata_file=metadata_path,
+                    resource_description=f"Security-Groups:\n{sgs_str}"
                 ))
         return findings
                 

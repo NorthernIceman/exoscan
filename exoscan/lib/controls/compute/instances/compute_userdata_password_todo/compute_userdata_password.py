@@ -4,13 +4,14 @@ from exoscan.lib.controls.models import Instance, InstanceContainer
 from log_conf.logger import logger
 
 def execute_logic(metadata_path):
+    #logger.info("Executing Control: compute_public_instance_unrestricted_ingress")
     try: 
         all_instances = get_instances()
         if not all_instances.instances: 
             logger.info("No instances found. Skipping Control compute_public_instance...")
             return
-        
-    #ToDo: get for each instance (with public ip) the security group and check if both allow access (complete, ports, etc. )
+        #TODO: check for password in user_data
+
     except Exception as error:
         logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
         sys.exit(1)

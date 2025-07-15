@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_instance_public_ingress_all_ports",
+    "control_description": "Check if instance is public and security-group allows unrestricted ingress traffic.",
+    "risk": "The instance might be exposed to the internet without proper security measures, leading to potential unauthorized access.",
+    "recommendation": "Make sure to restrict incoming and outgoing traffic as strictly as possible.",
+    "severity": "critical"
+}

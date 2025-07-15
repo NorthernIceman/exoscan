@@ -4,7 +4,7 @@ from exoscan.lib.controls.models import Finding
 from log_conf.logger import logger
 
 def execute_logic(metadata_path):
-    
+    logger.info("Executing Control: compute_instance_without_snapshot")
     try: 
         all_instances = get_instances()
         if not all_instances.instances: 
@@ -12,14 +12,16 @@ def execute_logic(metadata_path):
             return
 
         findings = []
-
-        logger.info("Executing control: compute_instance_without_snapshot")
+        found_instances = []
 
         for instance in all_instances.instances:
             if not instance.snapshots:
+                found_instances.append(instance.name)
+        if found_instances:
+                instances_str = "\n - ".join(found_instances)
                 findings.append(Finding.from_metadata(
                     metadata_file= metadata_path,
-                    resource_description=f"Instance {instance.name}"
+                    resource_description=f"Instances: \n - {str(instances_str)}"
                 ))
         return findings
 

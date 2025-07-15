@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_security_groups_unused_group",
+    "control_description": "Check if any security-group is unused.",
+    "risk": "Having unused security groups can be an indicator for negligent definition and allocation of resources and can induce administrative errors.",
+    "recommendation": "Review if unused groups are still relevant.",
+    "severity": "low"
+}

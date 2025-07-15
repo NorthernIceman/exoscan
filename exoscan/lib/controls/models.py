@@ -64,7 +64,7 @@ class Finding(BaseModel):
         return "\n".join(lines)
 
     def print_finding(self) -> None:
-        print(self.format_finding())
+        print(f"{self.format_finding()}")
 
 class SecurityGroupRule(BaseModel):
     id: Optional[str] = None
@@ -101,72 +101,70 @@ class SecurityGroupContainer(BaseModel):
         validate_by_name = True
         validate_assignment = True
 
-
-
 class InstanceType(BaseModel):
-    id: str
-    size: str
-    family: str
-    cpus: int
-    gpus: int
-    authorized: bool
-    memory: int
-    zones: List[str]
+    id: Optional[str] = None
+    size: Optional[str] = None
+    family: Optional[str] = None
+    cpus: Optional[int] = None
+    gpus: Optional[int] = None
+    authorized: Optional[bool] = None
+    memory: Optional[int] = None
+    zones: Optional[List[str]] = None
 
 class PrivateNetwork(BaseModel):
     id: str
-    mac_address: str
+    mac_address: Optional[str] = None
 
 class PrivateNetwork(BaseModel):
     id: Optional[str] = None
 
 class ElasticIP(BaseModel):
-    ip: str
+    ip: Optional[str] = None
     id: str
 
 class Template(BaseModel):
     maintainer: Optional[str] = None
     description: Optional[str] = None
-    ssh_key_enabled: Optional[bool] = None
+    ssh_key_enabled: Optional[bool] = Field(default=None, alias="ssh-key-enabled")
     family: Optional[str] = None
     name: Optional[str] = None
-    default_user: Optional[str] = None
+    default_user: Optional[str] = Field(default=None, alias="default-user")
     size: Optional[int] = None
-    password_enabled: Optional[bool] = None
+    password_enabled: Optional[bool] = Field(default=None, alias="password-enabled")
     build: Optional[str] = None
     checksum: Optional[str] = None
-    boot_mode: Optional[str] = None
+    boot_mode: Optional[str] = Field(default=None, alias="boot-mode")
     zones: Optional[List[str]] = None
     url: Optional[str] = None
     version: Optional[str] = None
-    created_at: Optional[str] = None
+    created_at: Optional[str] = Field(default=None, alias="created-at")
     visibility: Optional[str] = None
     id: Optional[str] = None
 
 class SSHKey(BaseModel):
     name: str
-    fingerprint: str
+    fingerprint: Optional[str] = None
 
 class Manager(BaseModel):
     id: str
-    type: str
+    type: Optional[str] = None
 
-
+#need alias cause api returns e.g. "security-groups" instead of "security_groups"
 class Instance(BaseModel):
-    public_ip_assignment: Optional[str] = None
+    public_ip_assignment: Optional[str] = Field(default=None, alias="public-ip-assignment")
     labels: Optional[Dict[str, str]] = None
-    security_groups: Optional[List[SecurityGroup]] = None
+    security_groups: Optional[List[SecurityGroup]] = Field(default=None, alias="security-groups")
     name: Optional[str] = None
-    instance_type: Optional[InstanceType] = None
-    private_networks: Optional[List[PrivateNetwork]] = None
+    instance_type: Optional[InstanceType] = Field(default=None, alias="instance-type")
+    private_networks: Optional[List[PrivateNetwork]] = Field(default=None, alias="private-networks")
     template: Optional[Template] = None
     state: Optional[str] = None
-    ssh_key: Optional[SSHKey] = None
+    ssh_key: Optional[SSHKey] = Field(default=None, alias="ssh-key")
     mac_address: Optional[str] = Field(default=None, alias="mac-address")
     manager: Optional[Any] = None  # Define this if needed
     ipv6_address: Optional[str] = Field(default=None, alias="ipv6-address")
     id: Optional[str] = None
-    ssh_keys: Optional[List[SSHKey]] = None
+    ssh_keys: Optional[List[SSHKey]] =  Field(default=None, alias="ssh-keys")
     created_at: Optional[datetime] = Field(default=None, alias="created-at")
     public_ip: Optional[str] = Field(default=None, alias="public-ip")
     disk_size: Optional[int] = Field(default=None, alias="disk-size")
@@ -185,6 +183,9 @@ class Instance(BaseModel):
 
 class InstanceContainer(BaseModel):
     instances: List[Instance]
+
+class SSHKeyContainer(BaseModel):
+    ssh_keys: List[SSHKey] = Field(default=None, alias="ssh-keys")
 
 
 

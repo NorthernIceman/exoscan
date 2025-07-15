@@ -6,26 +6,25 @@ from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
 def execute_logic(metadata_path):
-    
+    logger.info("Executing control: compute_instance_older_than_specific_days")
     try: 
         all_instances = get_instances()
         if not all_instances.instances: 
-            logger.info("No instances found. Skipping Control compute_old_instance...")
+            logger.info("No instances found. Skipping Control compute_instance_older_than_specific_days...")
             return
         threshold = datetime.now(timezone.utc) - timedelta(days=90)
         findings = []
-
-        logger.info("Executing control: compute_old_instance")
-
+        found_instances = []
         for instance in all_instances.instances:
             if instance.created_at < threshold:
-                findings.append(Finding.from_metadata(
-                    metadata_file= metadata_path,
-                    resource_description=f"Instance {instance.name}"
-                ))
+                found_instances.append(instance.id)
+        if found_instances:
+            instances_str = "\n - ".join(found_instances)
+            findings.append(Finding.from_metadata(
+                metadata_file= metadata_path,
+                resource_description=f"Instances: \n - {str(instances_str)}"
+            ))
         return findings
-            
-                #TODO: do stuff with metadata file (import it correctly)
 
     except Exception as error:
         logger.error(f"1{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")

@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_ssh_keys_unused",
+    "control_description": "Check if any ssh-key is unused.",
+    "risk": "Having unused ssh-keys can be an indicator for negligent definition and allocation of resources and can induce administrative errors.",
+    "recommendation": "Review if unused keys are still relevant.",
+    "severity": "low"
+}

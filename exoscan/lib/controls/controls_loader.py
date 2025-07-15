@@ -6,7 +6,6 @@ from log_conf.logger import logger
 def fetch_controls() -> set: 
     try:
         logger.info("Fetching controls...")
-        controls_to_execute = set()
         controls_modules_path = []
         controls = import_all_controls()
 

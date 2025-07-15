@@ -1,5 +1,5 @@
 {
-    "control_name": "compute_old_instance",
+    "control_name": "compute_instance_older_than_specific_days",
     "control_description": "Check if any instance is older than 90 days.",
     "risk": "Old instances might contain outdated/vulnerable software.",
     "recommendation": "Make sure running software is updated.",

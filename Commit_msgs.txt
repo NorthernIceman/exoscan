@@ -7,3 +7,29 @@
     added compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
     added compute_security_groups_allow_ingress_from_internet_to_database_ports
     added compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+
+13.07.: 
+    added compute_security_groups_unused_group
+    reworked models.py so Optional[] is used and Fields are correctly parsed
+    added compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+    added compute_ssh_keys_unused
+    added inventory file for ssh-keys (api-response also different from others)
+
+14.07.:
+    missed something with models.py
+    added compute_ssh_keys_old_keys
+    fixed inventory for instances, they seem to have changed all api-responses. 
+    added compute_public_instance_unrestricted_ingress
+    fixed some issues with older controls 
+
+15.07.:
+    added compute_public_instance_ingress_risky_ports
+    redid output in all controls until now (much work, very wow)
+    added compute_instance_public_ingress_database_ports
+    added compute_instance_public_ingress_kerberos_ldap_ports
+    added compute_instance_public_ingress_kibana_and_elastic_ports
+    added compute_instance_public_ingress_mgmt_ports
+    split compute_instance_unrestricted_ingress to quad_zero and all_ports
+
+
+

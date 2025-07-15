@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_instance_public_ingress_risky_ports",
+    "control_description": "Check if instance is public and security-group allows ingress traffic from 0.0.0.0/0 or ::0/0 to the ports 21(FTP), 25(SMTP), 110(POP3), 135(RCP), 143(IMAP), 445(CIFS), 3000(Go, Node.js, Ruby web developemnt frameworks), 4333(ahsp), 5000(Python web dev frameworks).",
+    "risk": "The instance might be exposed to the internet on these ports without proper security measures, leading to potential unauthorized access.",
+    "recommendation": "Make sure to restrict incoming and outgoing traffic as strictly as possible.",
+    "severity": "high"
+}

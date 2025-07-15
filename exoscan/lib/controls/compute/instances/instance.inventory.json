@@ -1,95 +1,141 @@
 {
   "instances": [
     {
-      "anti-affinity-groups": [],
-      "public-ip-assignment": "inet4",
+      "public-ip-assignment": "dual",
       "labels": {},
       "security-groups": [
         {
-          "id": "c901ec09-90ec-43cf-a10b-53fbc8e8a4c2"
-        }
-      ],
-      "elastic-ips": [
-        {
-          "ip": "194.182.164.99",
-          "id": "e391c209-d602-4fc8-a683-d89cd6edca43"
+          "id": "c901ec09-90ec-43cf-a10b-53fbc8e8a4c2",
+          "name": null,
+          "description": null,
+          "rules": null
         },
         {
-          "ip": "194.182.188.8",
-          "id": "ad84c1ec-5cb2-4df8-95e4-929f4f28c055"
+          "id": "af94b19e-3d1d-4960-a4ab-12ebf0374c83",
+          "name": null,
+          "description": null,
+          "rules": null
+        },
+        {
+          "id": "33b9c4a6-415a-4f47-bbd3-c8a5b9733203",
+          "name": null,
+          "description": null,
+          "rules": null
         }
       ],
-      "name": "test1",
+      "name": "VM-0b8df28e-5f63-4cfc-bfb9-3a7a6d69809b",
       "instance-type": {
-        "id": "71004023-bb72-4a97-b1e9-bc66dfce9470"
+        "id": "71004023-bb72-4a97-b1e9-bc66dfce9470",
+        "size": null,
+        "family": null,
+        "cpus": null,
+        "gpus": null,
+        "authorized": null,
+        "memory": null,
+        "zones": null
       },
       "private-networks": [],
       "template": {
-        "id": "c71eb1d9-e537-4f92-9832-7089e6e45fae"
+        "maintainer": null,
+        "description": null,
+        "ssh-key-enabled": null,
+        "family": null,
+        "name": null,
+        "default-user": null,
+        "size": null,
+        "password-enabled": null,
+        "build": null,
+        "checksum": null,
+        "boot-mode": null,
+        "zones": null,
+        "url": null,
+        "version": null,
+        "created-at": null,
+        "visibility": null,
+        "id": "cd6c18eb-1cc6-471a-ae9b-8a8f0e7ce507"
       },
-      "state": "running",
+      "state": "stopped",
       "ssh-key": {
-        "name": "Iceman"
+        "name": "Iceman",
+        "fingerprint": null
       },
-      "user-data": "IyEvYmluL2Jhc2gKcGFzc3dkIFBhc3N3MHJkCmVjaG8gJ2hlbGxvIHdvcmxkJw==",
-      "mac-address": "06:45:8a:00:12:cd",
-      "tpm-enabled": false,
-      "id": "6d4e316a-e7ba-477f-9f91-8ac11c82941b",
-      "snapshots": [],
-      "disk-size": 50,
+      "mac-address": "06:80:cc:00:10:f2",
+      "manager": null,
+      "ipv6-address": "2a04:c44:e00:e55c:480:ccff:fe00:10f2",
+      "id": "0b8df28e-5f63-4cfc-bfb9-3a7a6d69809b",
       "ssh-keys": [
         {
-          "name": "Iceman"
+          "name": "Iceman",
+          "fingerprint": null
         }
       ],
-      "created-at": "2025-04-23T21:08:32Z",
-      "public-ip": "194.182.189.237",
+      "created-at": "2025-07-14T12:15:24Z",
+      "public-ip": "194.182.188.18",
+      "disk-size": null,
+      "anti-affinity-groups": [],
+      "elastic-ips": [],
+      "user-data": null,
+      "snapshots": [],
       "block-storage-volumes": [],
       "region": "ch-dk-2"
     },
     {
-      "anti-affinity-groups": [],
-      "public-ip-assignment": "inet4",
+      "public-ip-assignment": "none",
       "labels": {},
-      "security-groups": [
-        {
-          "id": "c901ec09-90ec-43cf-a10b-53fbc8e8a4c2"
-        }
-      ],
-      "elastic-ips": [
-        {
-          "ip": "194.182.164.99",
-          "id": "e391c209-d602-4fc8-a683-d89cd6edca43"
-        },
-        {
-          "ip": "194.182.188.8",
-          "id": "ad84c1ec-5cb2-4df8-95e4-929f4f28c055"
-        }
-      ],
-      "name": "test3",
+      "security-groups": [],
+      "name": "VM-f910f2d3-96ef-4b55-bc90-1e791ada0d93",
       "instance-type": {
-        "id": "71004023-bb72-4a97-b1e9-bc66dfce9470"
+        "id": "71004023-bb72-4a97-b1e9-bc66dfce9470",
+        "size": null,
+        "family": null,
+        "cpus": null,
+        "gpus": null,
+        "authorized": null,
+        "memory": null,
+        "zones": null
       },
       "private-networks": [],
       "template": {
-        "id": "c71eb1d9-e537-4f92-9832-7089e6e45fae"
+        "maintainer": null,
+        "description": null,
+        "ssh-key-enabled": null,
+        "family": null,
+        "name": null,
+        "default-user": null,
+        "size": null,
+        "password-enabled": null,
+        "build": null,
+        "checksum": null,
+        "boot-mode": null,
+        "zones": null,
+        "url": null,
+        "version": null,
+        "created-at": null,
+        "visibility": null,
+        "id": "cd6c18eb-1cc6-471a-ae9b-8a8f0e7ce507"
       },
-      "state": "running",
+      "state": "stopped",
       "ssh-key": {
-        "name": "Iceman"
+        "name": "Iceman",
+        "fingerprint": null
       },
-      "mac-address": "06:89:ac:00:18:40",
-      "tpm-enabled": false,
-      "id": "b7fc97a4-82c4-4d66-8016-fe84bc164d37",
-      "snapshots": [],
-      "disk-size": 10,
+      "mac-address": null,
+      "manager": null,
+      "ipv6-address": null,
+      "id": "f910f2d3-96ef-4b55-bc90-1e791ada0d93",
       "ssh-keys": [
         {
-          "name": "Iceman"
+          "name": "Iceman",
+          "fingerprint": null
         }
       ],
-      "created-at": "2025-04-23T21:09:00Z",
-      "public-ip": "91.92.203.102",
+      "created-at": "2025-07-14T12:16:03Z",
+      "public-ip": null,
+      "disk-size": null,
+      "anti-affinity-groups": [],
+      "elastic-ips": [],
+      "user-data": null,
+      "snapshots": [],
       "block-storage-volumes": [],
       "region": "ch-dk-2"
     }

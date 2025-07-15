@@ -79,27 +79,27 @@ template public (visibility)
 
 
 
-#### security groups (D) 20
- - specific ports exposed to internet (sec-group only)
-    - cassandra (TCP 7000, 7001, 7199, 9042, 9160)
-    - elasticsearch/kibana
-    - cifs
-    - ftp
-    - kafka
-    - kerberos
-    - ldap
-    - memcached
-    - mongodb/mysql/oracle/postgresql/redis/sqlserver
-    - ssh/rdp/telnet
-    - smtp
-    - ingress from any to all
-    - ingress from any to any
-    - high risk tcp ports (25(SMTP), 110(POP3), 135(RCP), 143(IMAP), 445(CIFS), 3000(Go, Node.js, and Ruby web developemnt frameworks), 4333(ahsp), 5000(Python web development frameworks), 5500(fcp-addr-srvr1), 8080(proxy), 8088(legacy HTTP port))
-    - allow wide open public ipv4
-    - allow wide open public ipv6
- - default security group restricts all traffic
- - security group not used
- - security group has many ingress/egress rules (50)
+#### security groups (D) 20 y
+ - specific ports exposed to internet (sec-group only) y
+    - cassandra (TCP 7000, 7001, 7199, 9042, 9160) y
+    - elasticsearch/kibana y
+    - cifs y
+    - ftp y
+    - kafka y [389, 636]
+    - kerberos n [88, 464, 749, 750], y
+    - ldap y
+    - memcached y
+    - mongodb/mysql/oracle/postgresql/redis/sqlserver y
+    - ssh/rdp/telnet y
+    - smtp y
+    - ingress from any to all y
+    - ingress from any to any y
+    - high risk tcp ports (25(SMTP), 110(POP3), 135(RCP), 143(IMAP), 445(CIFS), 3000(Go, Node.js, and Ruby web developemnt frameworks), 4333(ahsp), 5000(Python web development frameworks), 5500(fcp-addr-srvr1), 8080(proxy), 8088(legacy HTTP port)) y
+    - allow wide open public ipv4 y
+    - allow wide open public ipv6 y
+ - default security group restricts all traffic y
+ - security group not used y
+ - security group has many ingress/egress rules (50) TODO: ask michael
 
 
 #### elastic ip (D) 2

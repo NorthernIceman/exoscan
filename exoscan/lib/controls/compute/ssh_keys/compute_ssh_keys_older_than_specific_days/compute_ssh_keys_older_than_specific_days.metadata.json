@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_ssh_keys_older_than_specific_days",
+    "control_description": "Check if any ssh-key is older than specific days.",
+    "risk": "Ssh-keys should be reviewed regularly, rotated and treated like passwords.",
+    "recommendation": "Review if old keys are still relevant and rotate them if possible.",
+    "severity": "medium"
+}
