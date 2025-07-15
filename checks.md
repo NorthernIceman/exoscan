@@ -1,15 +1,15 @@
 State: March 2025
 # compute ca.90
 #### instances (D) 27
- - instance type large -> does it need to be this large?
- - gpus to instances attributed - necessary?
+ - ***instance type large -> does it need to be this large?***
+ - ***gpus to instances attributed - necessary?***
  - template EoL
- - default user of template still enabled? - impossible
- - authorized or publicly available?
+ - ***default user of template still enabled? - impossible***
+ - ***authorized or publicly available?*** already done below
  - ***80 % of instances in same zone***
  - ***created long ago*** y
  - ***no snapshot for instance*** y
- - Instance Public facing? - done by checks below
+ - ***Instance Public facing? - done by checks below***
  - userdata contains passwords
  - default sec-group used
  - specific ports exposed to internet (sec-group + instance public) y
