@@ -34,6 +34,12 @@
     added compute_instance_large_instance_type
     added new region (yay)
 
+17.07.:
+    refactored instance-inventory function
+    added instance-type inventory function and made compute_instance_large_instance_type functional
+    added inventory function for templates
+    added compute_instance_outdated_template_used
+
 
 
 

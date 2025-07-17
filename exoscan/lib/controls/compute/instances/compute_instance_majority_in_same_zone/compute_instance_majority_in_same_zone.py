@@ -22,7 +22,6 @@ def execute_logic(metadata_path):
         max_region = None
         max_count = 0
         for region, instances in region_counter.items():
-            print(f"Region: {region}, Instances: {len(instances)}")
             if len(instances) > max_count:
                 max_count = len(instances)
                 max_region = region

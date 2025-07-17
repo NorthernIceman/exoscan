@@ -108,6 +108,13 @@ class InstanceType(BaseModel):
     memory: Optional[int] = None
     zones: Optional[List[str]] = None
 
+class InstanceTypeContainer(BaseModel):
+    instance_types: List[InstanceType] = Field(default=None, alias="instance-types")
+
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
 class PrivateNetwork(BaseModel):
     id: str
     mac_address: Optional[str] = None
@@ -137,6 +144,13 @@ class Template(BaseModel):
     created_at: Optional[str] = Field(default=None, alias="created-at")
     visibility: Optional[str] = None
     id: Optional[str] = None
+
+class TemplateContainer(BaseModel):
+    templates: List[Template] = None
+
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
 
 class SSHKey(BaseModel):
     name: str

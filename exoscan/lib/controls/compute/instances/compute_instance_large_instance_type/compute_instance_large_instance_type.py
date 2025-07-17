@@ -1,5 +1,5 @@
 import sys
-from exoscan.lib.controls.compute.instances.inventory import get_instances
+from exoscan.lib.controls.compute.instances.inventory import get_instances, get_instance_types
 from exoscan.lib.controls.models import Finding
 from log_conf.logger import logger
 
@@ -14,14 +14,16 @@ def execute_logic(metadata_path):
         findings = []
         found_instances = []
         large_instance_types = ["mega", "titan", "jumbo"] 
-        
+
         for instance in all_instances.instances:
-            if instance.instance_type.size in large_instance_types and instance.instance_type.gpus is None:
-                found_instances.append(f"\n - {instance.name} Size: {instance.instance_type.size}  GPUs: {instance.instance_type.gpus} Region: {instance.region}")
-            if instance.instance_type.size in large_instance_types:
-                found_instances.append(f"\n - {instance.name} Size: {instance.instance_type.size} Region: {instance.region}")
-            if instance.instance_type.gpus is not None:
-                found_instances.append(f"\n - {instance.name} GPUs: {instance.instance_type.gpus} Region: {instance.region}")
+            full_instance_type = get_instance_types(instance.instance_type.id)
+
+            if full_instance_type.size in large_instance_types and full_instance_type.gpus is not None:
+                found_instances.append(f"\n - {instance.name} Size: {full_instance_type.size}  GPUs: {full_instance_type.gpus} Region: {instance.region}")
+            if full_instance_type.size in large_instance_types:
+                found_instances.append(f"\n - {instance.name} Size: {full_instance_type.size} Region: {instance.region}")
+            if full_instance_type.gpus is not None:
+                found_instances.append(f"\n - {instance.name} GPUs: {full_instance_type.gpus} Region: {instance.region}")
         if found_instances:
                 instances_str = "".join(found_instances)
                 findings.append(Finding.from_metadata(
