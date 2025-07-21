@@ -7,3 +7,5 @@ Backups/
 ToDos.md
 Commit_msgs.txt
 exoscan.log
+exoscan\lib\controls\compute\instances\compute_userdata_password_todo
+exoscan\lib\controls\compute\instances\compute_userdata_password_todo\*

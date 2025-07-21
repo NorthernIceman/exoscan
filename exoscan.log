@@ -104,3 +104,682 @@
 2025-07-17 20:31 - INFO - Executing Control: compute_security_groups_unused_group
 2025-07-17 20:31 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
 2025-07-17 20:31 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 12:41 - INFO - Fetching controls...
+2025-07-21 12:41 - INFO - Executing controls...
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 12:41 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 12:41 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 12:41 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 12:41 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 12:41 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 12:41 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 12:41 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 12:41 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 13:55 - INFO - Fetching controls...
+2025-07-21 13:55 - INFO - Executing controls...
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 13:55 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 13:55 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 13:55 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 13:55 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 13:55 - ERROR - ValidationError[43] -- 1 validation error for ControlMetadata
+severity
+  Input should be 'critical', 'high', 'medium', 'low' or 'informational' [type=enum, input_value='Medium', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/enum
+2025-07-21 15:24 - INFO - Fetching controls...
+2025-07-21 15:24 - INFO - Executing controls...
+2025-07-21 15:24 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:24 - INFO - Fetching controls...
+2025-07-21 15:24 - INFO - Executing controls...
+2025-07-21 15:24 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:24 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:27 - INFO - Fetching controls...
+2025-07-21 15:27 - INFO - Executing controls...
+2025-07-21 15:27 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:27 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:28 - ERROR - TypeError[31] -- 'method' object does not support item assignment
+2025-07-21 15:28 - INFO - Fetching controls...
+2025-07-21 15:28 - INFO - Executing controls...
+2025-07-21 15:28 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:28 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:28 - ERROR - TypeError[32] -- 'method' object does not support item assignment
+2025-07-21 15:28 - INFO - Fetching controls...
+2025-07-21 15:28 - INFO - Executing controls...
+2025-07-21 15:28 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:28 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:28 - ERROR - ValidationError[35] -- 3 validation errors for InstanceContainer
+instances.0
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+instances.1
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+instances.2
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+2025-07-21 15:29 - INFO - Fetching controls...
+2025-07-21 15:29 - INFO - Executing controls...
+2025-07-21 15:29 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:29 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:29 - ERROR - ValidationError[36] -- 3 validation errors for InstanceContainer
+instances.0
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+instances.1
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+instances.2
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+2025-07-21 15:32 - INFO - Fetching controls...
+2025-07-21 15:32 - INFO - Executing controls...
+2025-07-21 15:32 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:32 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:32 - ERROR - ValidationError[36] -- 3 validation errors for InstanceContainer
+instances.0
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+instances.1
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+instances.2
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+2025-07-21 15:33 - INFO - Fetching controls...
+2025-07-21 15:33 - INFO - Executing controls...
+2025-07-21 15:33 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:33 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:33 - ERROR - ValidationError[34] -- 3 validation errors for InstanceContainer
+instances.0
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+instances.1
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+instances.2
+  Input should be a valid dictionary or instance of Instance [type=model_type, input_value=<bound method Response.json of <Response [401]>>, input_type=method]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+2025-07-21 15:35 - INFO - Fetching controls...
+2025-07-21 15:35 - INFO - Executing controls...
+2025-07-21 15:35 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:35 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_large_instance_type...
+2025-07-21 15:36 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_majority_in_same_zone...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_no_anti_affinity_group...
+2025-07-21 15:36 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_older_than_specific_days...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_outdated_template_used...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_public_ingress_all_ports...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_public_ingress_database_ports...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_public_ingress_from_quad_zero...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_public_ingress_kerberos_ldap_ports...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_public_ingress_kibana_and_elastic_ports...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_public_ingress_mgmt_ports...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_public_ingress_risky_ports...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_unreachable...
+2025-07-21 15:36 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_instance_without_snapshot...
+2025-07-21 15:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 15:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 15:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 15:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 15:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 15:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 15:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 15:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 15:36 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 15:36 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 15:36 - INFO - No instances found. Skipping Control compute_ssh_keys_older_than_specific_days...
+2025-07-21 15:36 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 15:37 - INFO - Fetching controls...
+2025-07-21 15:37 - INFO - Executing controls...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:37 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_large_instance_type...
+2025-07-21 15:37 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_majority_in_same_zone...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_no_anti_affinity_group...
+2025-07-21 15:37 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_older_than_specific_days...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_outdated_template_used...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_public_ingress_all_ports...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_public_ingress_database_ports...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_public_ingress_from_quad_zero...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_public_ingress_kerberos_ldap_ports...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_public_ingress_kibana_and_elastic_ports...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_public_ingress_mgmt_ports...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_public_ingress_risky_ports...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_unreachable...
+2025-07-21 15:37 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_instance_without_snapshot...
+2025-07-21 15:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 15:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 15:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 15:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 15:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 15:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 15:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 15:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 15:37 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 15:37 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 15:37 - INFO - No instances found. Skipping Control compute_ssh_keys_older_than_specific_days...
+2025-07-21 15:37 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 15:39 - INFO - Fetching controls...
+2025-07-21 15:39 - INFO - Executing controls...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_large_instance_type...
+2025-07-21 15:39 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_majority_in_same_zone...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_no_anti_affinity_group...
+2025-07-21 15:39 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_older_than_specific_days...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_outdated_template_used...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_public_ingress_all_ports...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_public_ingress_database_ports...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_public_ingress_from_quad_zero...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_public_ingress_kerberos_ldap_ports...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_public_ingress_kibana_and_elastic_ports...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_public_ingress_mgmt_ports...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_public_ingress_risky_ports...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_unreachable...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_instance_without_snapshot...
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 15:39 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 15:39 - INFO - No instances found. Skipping Control compute_ssh_keys_older_than_specific_days...
+2025-07-21 15:39 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 15:39 - INFO - Fetching controls...
+2025-07-21 15:39 - INFO - Executing controls...
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 15:39 - INFO - Instance cache not found. Creating full inventory...
+2025-07-21 15:39 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 15:39 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 15:39 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 15:39 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 15:39 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 15:39 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 16:13 - INFO - Fetching controls...
+2025-07-21 16:13 - INFO - Executing controls...
+2025-07-21 16:13 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 16:13 - INFO - InstancePool cache not found. Creating full inventory...
+2025-07-21 16:13 - ERROR - ValidationError[49] -- 1 validation error for InstancePoolContainer
+instance-pools
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+2025-07-21 16:20 - INFO - Fetching controls...
+2025-07-21 16:20 - INFO - Executing controls...
+2025-07-21 16:20 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 16:20 - ERROR - ValidationError[49] -- 1 validation error for InstancePoolContainer
+instance-pools
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+2025-07-21 16:20 - INFO - Fetching controls...
+2025-07-21 16:20 - INFO - Executing controls...
+2025-07-21 16:20 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 16:20 - INFO - InstancePool cache not found. Creating full inventory...
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 16:21 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 16:21 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 16:21 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 16:21 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 16:21 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 16:21 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 16:21 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 16:21 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 16:21 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 16:29 - INFO - Fetching controls...
+2025-07-21 16:29 - INFO - Executing controls...
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 16:29 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 16:29 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 16:29 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 16:29 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 16:29 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 16:29 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 16:29 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 16:29 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 16:29 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 16:30 - INFO - Fetching controls...
+2025-07-21 16:30 - INFO - Executing controls...
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 16:30 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 16:30 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 16:30 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 16:30 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 16:30 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 16:30 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 16:30 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 16:30 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 16:30 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 16:36 - INFO - Fetching controls...
+2025-07-21 16:36 - INFO - Executing controls...
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 16:36 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 16:36 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 16:36 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 16:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 16:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 16:36 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 16:36 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 16:36 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 16:36 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 16:37 - INFO - Fetching controls...
+2025-07-21 16:37 - INFO - Executing controls...
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 16:37 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 16:37 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 16:37 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 16:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 16:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 16:37 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 16:37 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 16:37 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 16:37 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 17:53 - INFO - Fetching controls...
+2025-07-21 17:53 - INFO - Executing controls...
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_pool_instances_different_type
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 17:53 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 17:53 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 17:53 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 17:53 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 17:53 - INFO - Fetching controls...
+2025-07-21 17:53 - INFO - Executing controls...
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_pool_instances_different_type
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 17:53 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 17:53 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 17:53 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 17:53 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 17:53 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 17:53 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 17:57 - INFO - Fetching controls...
+2025-07-21 17:57 - INFO - Executing controls...
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_pool_instances_different_type
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 17:57 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 17:57 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 17:57 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 17:57 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 17:57 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 17:57 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 17:57 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 17:57 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 17:57 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 17:58 - INFO - Fetching controls...
+2025-07-21 17:58 - INFO - Executing controls...
+2025-07-21 17:58 - INFO - Executing Control: compute_instance_pool_instances_different_type
+2025-07-21 17:58 - ERROR - 1UnboundLocalError[23] -- cannot access local variable 'instance_to_check' where it is not associated with a value
+2025-07-21 17:59 - INFO - Fetching controls...
+2025-07-21 17:59 - INFO - Executing controls...
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_pool_instances_different_type
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 17:59 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 17:59 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 17:59 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 17:59 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 17:59 - INFO - Fetching controls...
+2025-07-21 17:59 - INFO - Executing controls...
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_pool_instances_different_type
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 17:59 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 17:59 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 17:59 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 17:59 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 17:59 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 17:59 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 18:05 - INFO - Fetching controls...
+2025-07-21 18:05 - INFO - Executing controls...
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_pool_instances_different_template
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_pool_instances_different_type
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 18:05 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 18:05 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 18:05 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 18:05 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 18:05 - INFO - Fetching controls...
+2025-07-21 18:05 - INFO - Executing controls...
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_pool_instances_different_template
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_pool_instances_different_type
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 18:05 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 18:05 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 18:05 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 18:05 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 18:05 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 18:05 - INFO - Executing Control: compute_ssh_keys_unused
+2025-07-21 18:06 - INFO - Fetching controls...
+2025-07-21 18:06 - INFO - Executing controls...
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_pool_instances_different_template
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_pool_instances_different_type
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_pool_instances_state_not_running
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_large_instance_type
+2025-07-21 18:06 - INFO - Executing control: compute_instance_majority_in_same_zone
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_no_anti_affinity_group
+2025-07-21 18:06 - INFO - Executing control: compute_instance_older_than_specific_days
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_outdated_template_used
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_public_ingress_all_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_public_ingress_database_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_public_ingress_from_quad_zero
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_public_ingress_kerberos_ldap_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_public_ingress_kibana_and_elastic_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_public_ingress_mgmt_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_public_ingress_risky_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_unreachable
+2025-07-21 18:06 - INFO - Executing Control: compute_instance_without_snapshot
+2025-07-21 18:06 - INFO - Executing Control: compute_security_groups_allow_ingress_from_all_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_database_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_kibana_and_elastic_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_mgmt_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_security_groups_allow_ingress_from_internet_to_risky_ports
+2025-07-21 18:06 - INFO - Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks
+2025-07-21 18:06 - INFO - Executing Control: compute_security_groups_allow_ingress_from_quad_zero
+2025-07-21 18:06 - INFO - Executing Control: compute_security_groups_unused_group
+2025-07-21 18:06 - INFO - Executing Control: compute_ssh_keys_older_than_specific_days
+2025-07-21 18:06 - INFO - Executing Control: compute_ssh_keys_unused

@@ -147,7 +147,6 @@ class Template(BaseModel):
 
 class TemplateContainer(BaseModel):
     templates: List[Template] = None
-
     class Config:
         validate_by_name = True
         validate_assignment = True
@@ -185,8 +184,6 @@ class Instance(BaseModel):
     snapshots: Optional[List[Any]] = None
     block_storage_volumes: Optional[List[Any]] = Field(default=None, alias="block-storage-volumes")
     region: Optional[str] = None
-
-
     class Config:
         validate_by_name = True
         validate_assignment = True
@@ -194,9 +191,54 @@ class Instance(BaseModel):
 
 class InstanceContainer(BaseModel):
     instances: List[Instance]
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
 
 class SSHKeyContainer(BaseModel):
     ssh_keys: List[SSHKey] = Field(default=None, alias="ssh-keys")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
+class DeployTarget(BaseModel): 
+    id: str = None
+    name: Optional[str] = None
+    type: Optional[str] = None
+    description: Optional[str] = None
+
+class InstancePool(BaseModel):
+    anti_affinity_groups: Optional[List[Dict[str, Any]]] = Field(default=None, alias="anti-affinity-groups")
+    description: Optional[str] = None
+    public_ip_assignment: Optional[str] = Field(default=None, alias="public-ip-assignment")
+    labels: Optional[Dict[str, str]] = None
+    security_groups: Optional[List[SecurityGroup]] = Field(default=None, alias="security-groups")
+    elastic_ips: Optional[List[ElasticIP]] = Field(default=None, alias="elastic-ips")
+    name: Optional[str] = None
+    instance_type: Optional[InstanceType] = Field(default=None, alias="instance-type")
+    min_available: Optional[int] = Field(default = None, alias="min-available")
+    private_networks: Optional[List[PrivateNetwork]] = Field(default=None, alias="private-networks")
+    template: Optional[Template] = None
+    state: Optional[str] = None
+    size: Optional[int] = None
+    ssh_key: Optional[SSHKey] = Field(default=None, alias="ssh-key")
+    instance_prefix: Optional[str] = Field(default=None, alias="instance-prefix")
+    user_data: Optional[str] = Field(default=None, alias="user-data")
+    manager: Optional[str] = None
+    instances: Optional[List['Instance']] = None
+    deploy_target: Optional[DeployTarget] = None
+    ipv6_enabled: Optional[bool] = Field(default=False, alias="ipv6-enabled")
+    id: Optional[str] = None
+    disk_size: Optional[int] = Field(default=None, alias="disk-size")
+    ssh_keys: Optional[List[SSHKey]] =  Field(default=None, alias="ssh-keys")
+
+
+class InstancePoolContainer(BaseModel): 
+    instance_pools: List[InstancePool] = Field(default=None, alias="instance-pools")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
 
 
 

@@ -27,9 +27,12 @@ def get_instances(
                 response = requests.get(f"https://api-{region}.exoscale.com/v2/instance", auth=auth)
                 if response.status_code == 200:
                     for instance in response.json().get("instances", []):
-                        instance["region"] = region
-                        all_instances.append(instance)
-
+                        details_response  = requests.get(f"https://api-{region}.exoscale.com/v2/instance/{instance["id"]}", auth=auth)
+                        if details_response.status_code == 200:
+                            instance_details = details_response.json()
+                            instance_details["region"] = region
+                            all_instances.append(instance_details)
+                            
             container = InstanceContainer.model_validate({"instances": all_instances})
 
             with open(CACHE_FILE, "w") as f:

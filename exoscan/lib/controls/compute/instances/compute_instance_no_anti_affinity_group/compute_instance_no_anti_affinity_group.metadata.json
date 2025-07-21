@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_instance_no_anti_affinity_group",
+    "control_description": "Check if any instance does not have an anti-affinity group associated.",
+    "risk": "If multiple instances depend on the same host, a potential failure will have a larger impact.",
+    "recommendation": "Make sure to create and use anti-affinity groups to improve resiliency.",
+    "severity": "high"
+}

@@ -3,15 +3,17 @@ State: March 2025
 #### instances (D) 27
  - ***instance type large -> does it need to be this large?***
  - ***gpus to instances attributed - necessary?***
- - template EoL
+ - ***template EoL*** - y
  - ***default user of template still enabled? - impossible***
  - ***authorized or publicly available?*** already done below
  - ***80 % of instances in same zone***
  - ***created long ago*** y
  - ***no snapshot for instance*** y
  - ***Instance Public facing? - done by checks below***
- - userdata contains passwords
- - default sec-group used
+ - userdata contains passwords - how do i do this?
+ - ***default sec-group used***  - not necessary cause fail-save defaults: no one ingress. 
+ - ***ANTI-AFFINITY-Group!*** y
+ - check if instance private AND no private network attached
  - specific ports exposed to internet (sec-group + instance public) y
     - cassandra (TCP 7000, 7001, 7199, 9042, 9160)
     - elasticsearch/kibana
@@ -32,12 +34,18 @@ State: March 2025
    
 
 #### instance pools (D) 21
- - instance pool uses no anit-affinity group
- - user data contains passwords
- - created long ago
- - state error?
- - extensively many nodes in nodepool?
- - specific ports exposed to internet (sec-group + instance public)
+ - all checks in instances also apply here (yay)
+ - Instance Pool member instances might have different types. Updating the instance type applies only to new members; existing members remain untouched.
+  -> ***check if all instances of instance pool have same type*** y
+  -> check if all instances have same os as pool dictates
+  ->***check if all instances have status running*** y
+    following already done with instances: 
+ - ***instance pool uses no anit-affinity group*** y
+ - ***user data contains passwords*** y
+ - ***created long ago***
+ - ***state error?***
+ - ***extensively many nodes in nodepool?***
+ - ***specific ports exposed to internet (sec-group + instance public)***
     - cassandra (TCP 7000, 7001, 7199, 9042, 9160)
     - elasticsearch/kibana
     - cifs

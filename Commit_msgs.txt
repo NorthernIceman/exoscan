@@ -40,6 +40,18 @@
     added inventory function for templates
     added compute_instance_outdated_template_used
 
+21.07.: 
+    added compute_instance_unreachable
+    added compute_instance_no_anti_affinity_group
+    defined controls for instance_pools
+    altered inventory for instances so they include details again 
+    added inventory.py for instance_pools
+    altered gitignore
+    added compute_instance_pool_instances_state_not_running
+    added compute_instance_pool_instances_different_template
+    added compute_instance_pool_instances_different_type
+
+
 
 
 

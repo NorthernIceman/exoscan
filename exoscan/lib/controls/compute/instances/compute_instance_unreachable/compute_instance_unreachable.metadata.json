@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_instance_unreachable",
+    "control_description": "Check if instance is private and no private network is attached.",
+    "risk": "The instance is unreachable but still requires resources, raising costs.",
+    "recommendation": "Minimize costs and improve manageability by terminating resources that are unused or unusable.",
+    "severity": "Medium"
+}
