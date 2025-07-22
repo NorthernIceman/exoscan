@@ -51,6 +51,14 @@
     added compute_instance_pool_instances_different_template
     added compute_instance_pool_instances_different_type
 
+22.07.:
+    added sks inventory and model and fixed errors that came with that
+    added compute_sks_auto_update_disabled
+    added compute_sks_version_outdated
+    redid some things with inventory for templates, scrapped template control because unnecessary
+    added elastic-ips model and inventory
+    added compute_eip_shodan
+
 
 
 

@@ -1,5 +1,6 @@
 import sys
-from exoscan.lib.controls.compute.instances.inventory import get_instances, get_instance_templates
+from exoscan.lib.controls.compute.instances.inventory import get_instances
+from exoscan.lib.controls.compute.templates.inventory import get_instance_templates
 from exoscan.lib.controls.models import Finding
 from log_conf.logger import logger
 

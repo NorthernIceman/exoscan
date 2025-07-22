@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_sks_version_outdated",
+    "control_description": "Check if any SKS-Cluster has version which can no longer be selected.",
+    "risk": "Using versions that are no longer offered by exoscale may indicate old resources, increasing the risks for running vulnerable software.",
+    "recommendation": "Make sure to update your sks-cluster regularly.",
+    "severity": "high"
+}

@@ -1,6 +1,6 @@
 State: March 2025
 # compute ca.90
-#### instances (D) 27
+#### instances (D) 27 y
  - ***instance type large -> does it need to be this large?***
  - ***gpus to instances attributed - necessary?***
  - ***template EoL*** - y
@@ -33,7 +33,7 @@ State: March 2025
     - allow wide open public ipv6
    
 
-#### instance pools (D) 21
+#### instance pools (D) 21 y
  - all checks in instances also apply here (yay)
  - Instance Pool member instances might have different types. Updating the instance type applies only to new members; existing members remain untouched.
   -> ***check if all instances of instance pool have same type*** y
@@ -63,27 +63,29 @@ State: March 2025
     - allow wide open public ipv4
     - allow wide open public ipv6
 
-#### sks (D) 9+
- - auto-upgrade enabled?
+#### sks (D) 9+ maybe
+ - ***auto-upgrade enabled?***
  - cluster state error?
  - creation date is old
- - control plane version outdated?
- - Nodepools:
+ - ***control plane version outdated?***
+ - ***Nodepools: ***
    - extra-large types ?
    - default-security groups?
    - Anti-Affinity-groups?
    - specific ports exposed to the internet? (look at ports from instances)
    - extensively many nodes in nodepool?
+    => Nodepools are instance-pools, so all checks from instances and instance-pools apply here YAY!!!
 
-#### block storage (D) 3
+#### block storage (D) 3 
  - block storage volumes
    - creation date old
    - correspondig snapshot exists(backup?)
  - block storage snapshots
    - creation date old
+ - unassigned block-storage
 
 #### templates (D) 1
-template public (visibility)
+***template public (visibility) => does not make sense!!***
 
 
 

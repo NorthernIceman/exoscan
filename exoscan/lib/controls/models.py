@@ -124,7 +124,29 @@ class PrivateNetwork(BaseModel):
 
 class ElasticIP(BaseModel):
     ip: Optional[str] = None
-    id: str
+    id: Optional[str] = None
+    description: Optional[str] = None
+    cidr: Optional[str] = None
+    addressfamily: Optional[str] = None
+    healthcheck: Optional['HealthCheck'] = None
+    labels: Optional[Dict[str, str]] = None
+
+class HealthCheck(BaseModel): 
+    strikes_ok: Optional[int] = Field(default=None, alias="strikes-ok")
+    tls_skip_verify: Optional[bool] = Field(default=None, alias="tls-skip-verify")
+    tls_sni: Optional[str] = Field(default=None, alias="tls-sni")
+    strikes_fail: Optional[int] = Field(default=None, alias="strikes-fail")
+    mode: Optional[str] = None
+    port: Optional[int] = None
+    uri: Optional[str] = None
+    interval: Optional[int] = None
+    timeout: Optional[int] = None
+
+class ElasticIPContainer(BaseModel):
+    elastic_ips: List[ElasticIP] = Field(Default=None, alias="elastic-ips")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
 
 class Template(BaseModel):
     maintainer: Optional[str] = None
@@ -178,7 +200,7 @@ class Instance(BaseModel):
     created_at: Optional[datetime] = Field(default=None, alias="created-at")
     public_ip: Optional[str] = Field(default=None, alias="public-ip")
     disk_size: Optional[int] = Field(default=None, alias="disk-size")
-    anti_affinity_groups: Optional[List[Dict[str, Any]]] = Field(default=None, alias="anti-affinity-groups")
+    anti_affinity_groups: Optional[List['AntiAffinityGroup']] = Field(default=None, alias="anti-affinity-groups")
     elastic_ips: Optional[List[ElasticIP]] = Field(default=None, alias="elastic-ips")
     user_data: Optional[str] = Field(default=None, alias="user-data")
     snapshots: Optional[List[Any]] = None
@@ -188,6 +210,10 @@ class Instance(BaseModel):
         validate_by_name = True
         validate_assignment = True
 
+class AntiAffinityGroup(BaseModel):
+    id: str
+    name: Optional[str] = None
+    description: Optional[str] = None
 
 class InstanceContainer(BaseModel):
     instances: List[Instance]
@@ -208,7 +234,7 @@ class DeployTarget(BaseModel):
     description: Optional[str] = None
 
 class InstancePool(BaseModel):
-    anti_affinity_groups: Optional[List[Dict[str, Any]]] = Field(default=None, alias="anti-affinity-groups")
+    anti_affinity_groups: Optional[List['AntiAffinityGroup']] = Field(default=None, alias="anti-affinity-groups")
     description: Optional[str] = None
     public_ip_assignment: Optional[str] = Field(default=None, alias="public-ip-assignment")
     labels: Optional[Dict[str, str]] = None
@@ -234,7 +260,75 @@ class InstancePool(BaseModel):
 
 
 class InstancePoolContainer(BaseModel): 
-    instance_pools: List[InstancePool] = Field(default=None, alias="instance-pools")
+    instance_pools: List['InstancePool'] = Field(default=None, alias="instance-pools")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
+class Taint(BaseModel):
+    value: str = None
+    effect: str = None
+
+class KubeletImageGC(BaseModel):
+    high_threshold: Optional[int] = Field(default=None, alias="high-threshold")
+    low_threshold: Optional[int] = Field(default=None, alias="low-threshold")
+    min_age: Optional[str] = Field(default=None, alias="min-age")
+
+class DeployTarget(BaseModel):
+    id: str = None
+    name: Optional[str] = None
+    type: Optional[str] = None 
+    description: Optional[str] = None
+
+class SKSNodepool(BaseModel):
+    anti_affinity_groups: Optional[List['AntiAffinityGroup']] = Field(default=None, alias="anti-affinity-groups")
+    description: Optional[str] = None
+    public_ip_assignment: Optional[str] = Field(default=None, alias="public-ip-assignment")
+    labels: Optional[Dict[str, str]] = None
+    taints: Optional[Taint] = None
+    security_groups: Optional[List[SecurityGroup]] = Field(default=None, alias="security-groups")
+    name: Optional[str] = None
+    instance_type: Optional[InstanceType] = Field(default=None, alias="instance-type")
+    private_networks: Optional[List[PrivateNetwork]] = Field(default=None, alias="private-networks")
+    template: Optional[Template] = None
+    state: Optional[str] = None
+    size: Optional[int] = None
+    kubelet_image_gc: Optional['KubeletImageGC'] = Field(default=None, alias="kubelet-image-gc")
+    instance_pool: Optional['InstancePool'] = Field(default=None, alias="instance-pool")
+    instance_prefix: Optional[str] = Field(default=None, alias="instance-prefix")
+    deploy_target: Optional['DeployTarget'] = Field(default=None, alias="deploy-target")
+    addons: Optional[List[str]] = None
+    id: Optional[str] = None
+    disk_size: Optional[int] = Field(default=None, alias="disk-size")
+    version: Optional[str] = None
+    created_at: Optional[str] = Field(default=None, alias="created-at")
+
+
+class SKSCluster(BaseModel):
+    description: Optional[str] = None
+    labels: Optional[Dict[str, str]] = None
+    cni: Optional[str] = None
+    auto_upgrade: Optional[bool] = Field(default=None, alias="auto-upgrade")
+    name: Optional[str] = None
+    enable_operators_ca: Optional[bool] = Field(default=None, alias="enable-operators-ca")
+    state: Optional[str] = None
+    enable_kube_proxy: Optional[bool] = Field(default=None, alias="enable-kube-proxy")
+    level: Optional[str] = None
+    feature_gates: Optional[List[str]] = Field(default=None, alias="feature-gates")
+    addons: Optional[List[str]] = None
+    id: Optional[str] = None
+    version: Optional[str] = None
+    created_at: Optional[str] = Field(default=None, alias="created-at")
+    endpoint: Optional[str] = None
+    node_cidr_mask_size_ipv6: Optional[int] = Field(default=None, alias="node-cidr-mask-size-ipv6")
+    default_security_group_id: Optional[str] = Field(default=None, alias="default-security-group-id")
+    nodepools: Optional[List[SKSNodepool]] = None
+    node_cidr_mask_size_ipv4: Optional[int] = Field(default=None, alias="node-cidr-mask-size-ipv4")
+    service_cluster_ip_range: Optional[str] = Field(default=None, alias="service-cluster-ip-range")
+    cluster_cidr: Optional[str] = Field(default=None, alias="cluster-cidr")
+
+class SKSClusterContainer(BaseModel):
+    sks_cluster: List[SKSCluster] = Field(default=None, alias="sks-clusters")
     class Config:
         validate_by_name = True
         validate_assignment = True

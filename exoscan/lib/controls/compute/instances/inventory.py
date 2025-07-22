@@ -10,7 +10,7 @@ from log_conf.logger import logger
 
 CACHE_FILE = "exoscan/lib/controls/compute/instances/instance.inventory.json"
 CACHE_FILE_TYPE = "exoscan/lib/controls/compute/instances/instance_type.inventory.json"
-CACHE_FILE_TEMPLATE = "exoscan/lib/controls/compute/instances/templates.inventory.json"
+
 
 def get_instances(
         instance_id: str = None
@@ -94,46 +94,6 @@ def get_instance_types(
             raise Exception(f"Instance Type '{instance_type}' not found in cached inventory.")
 
         return InstanceTypeContainer.model_validate(json_data)
-    except Exception as error:
-        logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
-        sys.exit(1)
-
-
-def get_instance_templates(
-    template_id: str = None
-) -> TemplateContainer | Template:
-    try:
-        if not os.path.exists(CACHE_FILE_TEMPLATE):
-            logger.info("Instance template cache not found. Creating full inventory...")
-            auth = authenticate()
-
-            all_templates = []
-
-
-            response = requests.get(f"https://api-ch-gva-2.exoscale.com/v2/template", auth=auth)
-            if response.status_code == 200:
-                for template in response.json().get("templates", []):
-                    all_templates.append(template)
-
-            container = TemplateContainer.model_validate({"templates": all_templates})
-
-            with open(CACHE_FILE_TEMPLATE, "w") as f:
-                json.dump(container.model_dump(mode="json", by_alias=True), f, indent=2)
-
-
-        with open(CACHE_FILE_TEMPLATE, "r") as f:
-            json_data = json.load(f)
-
-
-        if template_id:
-            for template in json_data.get("instance-templates", []):
-                if template.get("id") == template_id:
-                    return Template.model_validate(template)
-
-            return False
-
-
-        return TemplateContainer.model_validate(json_data)
     except Exception as error:
         logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
         sys.exit(1)

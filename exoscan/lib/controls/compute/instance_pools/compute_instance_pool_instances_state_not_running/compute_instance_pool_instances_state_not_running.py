@@ -31,7 +31,7 @@ def execute_logic(metadata_path):
                     metadata_file= metadata_path,
                     resource_description=f"Instance-Pools: \n{str(instance_pool_str)}"
                 ))
-        return findings
+                return findings
 
     except Exception as error:
         logger.error(f"1{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
