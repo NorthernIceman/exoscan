@@ -59,6 +59,22 @@
     added elastic-ips model and inventory
     added compute_eip_shodan
 
+23.7.:
+    added compute_eip_unused
+    added load_balancer models and inventory
+    added compute_load_balancer_security_group_blocks_health_check
+    added compute_load_balancer_security_health_check_fails
+    added blockstorage snapshot and volume models and inventory-functions
+    added compute_block_storage_unused_volume
+    added compute_block_storage_no_snapshots
+    added private network model and inventory Fields
+    added compute_private_networks_leases_reach_threshold
+    altered gitignore
+    module compute is now complete (yay)
+
+
+
+
 
 
 

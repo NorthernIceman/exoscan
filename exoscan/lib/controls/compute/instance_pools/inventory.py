@@ -40,11 +40,11 @@ def get_instance_pools(
             json_data = json.load(f)
 
         if instance_pool_id:
-            for instance in json_data.get("instances", []):
-                if instance.get("id") == instance_pool_id:
-                    return InstancePool.model_validate(instance)
+            for instance_pool in json_data.get("instance-pools", []):
+                if instance_pool.get("id") == instance_pool_id:
+                    return InstancePool.model_validate(instance_pool)
 
-            raise Exception(f"Instance ID '{instance_pool_id}' not found in cached inventory.")
+            raise Exception(f"Instance-Pool ID '{instance_pool_id}' not found in cached inventory.")
 
         return InstancePoolContainer.model_validate(json_data)
 

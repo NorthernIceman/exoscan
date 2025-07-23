@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_private_networks_leases_reach_threshold",
+    "control_description": "Check if any private network reaches the specified threshold of leases.",
+    "risk": "When the private networks' capacity is reached, deployment failures and potential service interruptions may be the consequence.",
+    "recommendation": "Increase the size of you subnet or release unnecessary/unused IPs.",
+    "severity": "medium"
+}

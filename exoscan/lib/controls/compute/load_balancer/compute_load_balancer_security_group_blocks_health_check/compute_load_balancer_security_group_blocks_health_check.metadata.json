@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_load_balancer_security_group_blocks_health_check",
+    "control_description": "Check if any load-balancers services are inoperable because the security-group does not allow the healthcheck.",
+    "risk": "If healthchecks are not successfull, the load-balancer does not forward traffic to the instances, resulting in reduced availability.",
+    "recommendation": "Make sure to configure the healthchecks properly or add a rule to your security-group.",
+    "severity": "high"
+}

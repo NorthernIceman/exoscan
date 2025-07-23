@@ -333,6 +333,99 @@ class SKSClusterContainer(BaseModel):
         validate_by_name = True
         validate_assignment = True
 
+class LoadBalancer(BaseModel):
+    id: Optional[str] = None
+    description: Optional[str] = None
+    name: Optional[str] = None
+    state: Optional[str] = None
+    created_at: Optional[str] = Field(default=None, alias="created-at")
+    ip: Optional[str] = None
+    services: Optional[List['Service']] = None
+    labels: Optional[Dict[str, str]] = None
+
+class HealthCheckStatus(BaseModel):
+    public_ip: Optional[str] = Field(default=None, alias="public-ip")
+    status: Optional[str] = None
+
+class Service(BaseModel):
+    description: Optional[str] = None
+    protocol: Optional[str] = None
+    name: Optional[str] = None
+    state: Optional[str] = None
+    target_port: Optional[int] = Field(default=None, alias="target-port")
+    port: Optional[int] = None
+    instance_pool: Optional['InstancePool'] = Field(default=None, alias="instance-pool")
+    strategy: Optional[str] = None
+    healthcheck: Optional['HealthCheck'] = None
+    id: Optional[str] = None
+    healthcheck_status: Optional[List['HealthCheckStatus']] = Field(default=None, alias="healthcheck-status")
+
+class LoadBalancerContainer(BaseModel):
+    load_balancers: List['LoadBalancer'] = Field(default=None, alias="load-balancers")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
+class BlockStorageVolume(BaseModel):
+    labels: Optional[Dict[str, str]] = None
+    id: Optional[str] = None
+    name: Optional[str] = None
+    instance: Optional[Instance] = None
+    state: Optional[str] = None
+    size: Optional[int] = None
+    blocksize: Optional[int] = None
+    block_storage_snapshots: Optional[List['BlockStorageSnapshot']] = Field(default=None, alias="block-storage-snapshots")
+    created_at: Optional[str] = Field(default=None, alias="created-at")
+
+class BlockStorageSnapshot(BaseModel):
+    labels: Optional[Dict[str, str]] = None
+    id: Optional[str] = None
+    name: Optional[str] = None
+    size: Optional[int] = None
+    volume_size: Optional[int] = Field(default=None, alias="volume-size")
+    created_at: Optional[str] = Field(default=None, alias="created-at")
+    state: Optional[str] = None
+    block_storage_volume: Optional[List['BlockStorageVolume']] = Field(default=None, alias="block-storage-volume")
+
+class BlockStorageVolumeContainer(BaseModel):
+    block_storage_volumes: List['BlockStorageVolume'] = Field(default=None, alias="block-storage-volumes")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
+class BlockStorageSnapshotContainer(BaseModel):
+    block_storage_snapshots: List['BlockStorageSnapshot'] = Field(default=None, alias="block-storage-snapshots")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
+class Leases(BaseModel):
+    ip: Optional[str] = None
+    instance_id: Optional[str] = Field(default=None, alias="instance-id")
+
+class Options(BaseModel):
+    routers: Optional[List[str]] = None
+    dns_servers: Optional[List[str]] = Field(default=None, alias="dns-servers")
+    ntp_servers: Optional[List[str]] = Field(default=None, alias="ntp-servers")
+    domain_search:  Optional[List[str]] = Field(default=None, alias="domain-search")
+
+class PrivateNetwork(BaseModel):
+    description: Optional[str] = None
+    labels: Optional[Dict[str, str]] = None
+    name: Optional[str] = None
+    start_ip: Optional[str] = Field(default=None, alias="start-ip")
+    end_ip: Optional[str] = Field(default=None, alias="end-ip")
+    leases: Optional[List['Leases']] = None
+    id: Optional[str] = None
+    vni: Optional[int] = None
+    netmask: Optional[str] = None
+    options: Optional['Options'] = None
+
+class PrivateNetworkContainer(BaseModel):
+    private_networks: List['PrivateNetwork'] = Field(default=None, alias="private-networks")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
 
 
 

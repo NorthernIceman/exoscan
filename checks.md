@@ -78,13 +78,13 @@ State: March 2025
 
 #### block storage (D) 3 
  - block storage volumes
-   - creation date old
-   - correspondig snapshot exists(backup?)
+   - creation date old - no
+   - correspondig snapshot exists(backup?) - yes
  - block storage snapshots
    - creation date old
- - unassigned block-storage
+ - unassigned block-storage - yes
 
-#### templates (D) 1
+#### templates (D) 1 y
 ***template public (visibility) => does not make sense!!***
 
 
@@ -112,18 +112,20 @@ State: March 2025
  - security group has many ingress/egress rules (50) TODO: ask michael
 
 
-#### elastic ip (D) 2
-Elastic IP Shodan?
-Elastic IP unassigned
+#### elastic ip (D) 2 y
+***Elastic IP Shodan?*** y
+?***Elastic IP unassigned?*** y
 
-#### load balancers (D) 4+
+#### load balancers (D) 4+ y
  - service is internet facing
  - health check interval too big
  - health check retries too high
  - health check timeout too high
+ => health check: has built-in checks so no one can go higher
+ => get service, get healthcheck, get instance-sec-group and check if security group does not allow healthcheck? => no positive healthcheck, now service. so: sec-group must enable access to this. 
 
 #### private networks (D) 2
- - any dangers with too big private networks?
+ - any dangers with too big private networks? - no
  - maybe subnet almost full - threshold of 80% of ip leases of network
 
 #### ssh-keys (D) 1 y
@@ -238,7 +240,7 @@ state -> error: retreve all with state error (inventory?)
 password login disabled and no sshkey? no login - still pays
 check certificate stuff in sks?
 
-why all ports seperately? -> because of Metadata and more precise interpretation of results
+why all ports seperatly? -> because of Metadata and more precise interpretation of results
 
 # impossible
 XX - ssh-key-age: data not available 

@@ -1,0 +1,67 @@
+{
+  "load-balancers": [
+    {
+      "id": "6583977a-abed-4514-887b-44d12206df0e",
+      "description": "",
+      "name": "testlb",
+      "state": "running",
+      "created-at": "2025-07-23T08:46:22Z",
+      "ip": "194.182.167.130",
+      "services": [
+        {
+          "description": "",
+          "protocol": "tcp",
+          "name": "testservice",
+          "state": "running",
+          "target-port": 80,
+          "port": 80,
+          "instance-pool": {
+            "anti-affinity-groups": null,
+            "description": null,
+            "public-ip-assignment": null,
+            "labels": null,
+            "security-groups": null,
+            "elastic-ips": null,
+            "name": null,
+            "instance-type": null,
+            "min-available": null,
+            "private-networks": null,
+            "template": null,
+            "state": null,
+            "size": null,
+            "ssh-key": null,
+            "instance-prefix": null,
+            "user-data": null,
+            "manager": null,
+            "instances": null,
+            "deploy_target": null,
+            "ipv6-enabled": false,
+            "id": "1fd14b97-81b1-4e83-b065-11bf3dbe4ef3",
+            "disk-size": null,
+            "ssh-keys": null
+          },
+          "strategy": "round-robin",
+          "healthcheck": {
+            "strikes-ok": null,
+            "tls-skip-verify": null,
+            "tls-sni": null,
+            "strikes-fail": null,
+            "mode": "http",
+            "port": 80,
+            "uri": "/",
+            "interval": 10,
+            "timeout": 2
+          },
+          "id": "5e6c62f2-ae55-4eee-aa5a-dedcaba1fafa",
+          "healthcheck-status": [
+            {
+              "public-ip": "91.92.154.86",
+              "status": "success"
+            }
+          ]
+        }
+      ],
+      "labels": null
+    }
+  ]
+}

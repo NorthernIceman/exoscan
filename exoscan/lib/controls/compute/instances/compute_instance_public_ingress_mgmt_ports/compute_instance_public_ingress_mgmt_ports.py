@@ -36,10 +36,10 @@ def execute_logic(metadata_path):
                                             found_rule.append(f"(Rule-ID: {rule.id}, Port: {str(set(conf_risky_ports))})")
                             if found_rule:
                                 rules_str = "\n      ".join(found_rule)
-                                found_sg.append(f"Security-Group: {examined_sg.name}\n    {rules_str}")  
+                                found_sg.append(f"Security-Group: {examined_sg.name}\n      {rules_str}")  
                 if found_sg:
                     sgs_str = "\n    ".join(found_sg)
-                    found_instances.append(f" - Instance: {instance.name}\n  {sgs_str}")
+                    found_instances.append(f" - Instance: {instance.name}\n    {sgs_str}")
                                 
         if found_instances:
             instances_str = "\n".join(found_instances)

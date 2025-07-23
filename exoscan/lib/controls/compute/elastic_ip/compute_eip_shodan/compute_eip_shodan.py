@@ -15,7 +15,7 @@ def execute_logic(metadata_path):
     try: 
         all_eip = get_elastic_ip()
         if not all_eip.elastic_ips: 
-            logger.info("No instance-pools found. Skipping Control compute_eip_shodan...")
+            logger.info("No elastic IPs found. Skipping Control compute_eip_shodan...")
             return
 
         findings = []

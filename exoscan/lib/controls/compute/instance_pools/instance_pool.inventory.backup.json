@@ -3,9 +3,7 @@
     {
       "anti-affinity-groups": [
         {
-          "id": "957c7af0-9e20-4149-bbac-9012010953b5",
-          "name": null,
-          "description": null
+          "id": "957c7af0-9e20-4149-bbac-9012010953b5"
         }
       ],
       "description": "",
@@ -13,14 +11,14 @@
       "labels": null,
       "security-groups": [
         {
-          "id": "c901ec09-90ec-43cf-a10b-53fbc8e8a4c2",
+          "id": "33b9c4a6-415a-4f47-bbd3-c8a5b9733203",
           "name": null,
           "description": null,
           "rules": null
         }
       ],
       "elastic-ips": null,
-      "name": "testpool",
+      "name": "testpool1",
       "instance-type": {
         "id": "71004023-bb72-4a97-b1e9-bc66dfce9470",
         "size": null,
@@ -57,20 +55,45 @@
         "id": "14269ff4-c1cd-45f7-8cfd-3903873a6636"
       },
       "state": "running",
-      "size": 1,
+      "size": 2,
       "ssh-key": {
         "name": "Iceman",
         "fingerprint": null
       },
-      "instance-prefix": "pool",
-      "user-data": null,
+      "instance-prefix": "testpool1",
+      "user-data": "Iy9iaW4vYmFzaAphZGR1c2VyIHN0ZXZlIC1wIHN0ZXZlMTIzNA==",
       "manager": null,
       "instances": [
         {
           "public-ip-assignment": null,
           "labels": null,
           "security-groups": null,
-          "name": "pool-1fd14-dbcdn",
+          "name": "testpool1-b278c-srepr",
+          "instance-type": null,
+          "private-networks": null,
+          "template": null,
+          "state": "stopped",
+          "ssh-key": null,
+          "mac-address": null,
+          "manager": null,
+          "ipv6-address": null,
+          "id": "57f8b888-9cbd-4343-8c81-1888c5cf68a5",
+          "ssh-keys": null,
+          "created-at": "2025-07-21T11:02:45Z",
+          "public-ip": null,
+          "disk-size": null,
+          "anti-affinity-groups": null,
+          "elastic-ips": null,
+          "user-data": null,
+          "snapshots": null,
+          "block-storage-volumes": null,
+          "region": null
+        },
+        {
+          "public-ip-assignment": null,
+          "labels": null,
+          "security-groups": null,
+          "name": "testpool1-b278c-ruayl",
           "instance-type": null,
           "private-networks": null,
           "template": null,
@@ -79,9 +102,9 @@
           "mac-address": null,
           "manager": null,
           "ipv6-address": null,
-          "id": "e4188093-c97f-43cd-976f-9b0ac282cbe3",
+          "id": "6f1e7245-643d-42ee-a0f6-4a45f31a11c8",
           "ssh-keys": null,
-          "created-at": "2025-07-23T08:47:44Z",
+          "created-at": "2025-07-21T11:02:45Z",
           "public-ip": null,
           "disk-size": null,
           "anti-affinity-groups": null,
@@ -94,7 +117,7 @@
       ],
       "deploy_target": null,
       "ipv6-enabled": false,
-      "id": "1fd14b97-81b1-4e83-b065-11bf3dbe4ef3",
+      "id": "b278cbfc-e200-4a55-a23b-ecb66932d3bf",
       "disk-size": 10,
       "ssh-keys": [
         {

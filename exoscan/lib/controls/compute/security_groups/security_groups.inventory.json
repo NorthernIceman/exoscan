@@ -12,6 +12,15 @@
           "id": "03a75d18-81d8-4113-861c-57e1e8a8df2e",
           "network": "0.0.0.0/0",
           "flow-direction": "ingress"
+        },
+        {
+          "description": "",
+          "start-port": 80,
+          "protocol": "tcp",
+          "end-port": 80,
+          "id": "543b33a8-0603-4099-a8a1-53d4658e815f",
+          "network": "0.0.0.0/0",
+          "flow-direction": "ingress"
         }
       ],
       "id": "c901ec09-90ec-43cf-a10b-53fbc8e8a4c2",
