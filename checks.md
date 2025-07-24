@@ -1,5 +1,5 @@
 State: March 2025
-# compute ca.90
+# compute ca.90 y
 #### instances (D) 27 y
  - ***instance type large -> does it need to be this large?***
  - ***gpus to instances attributed - necessary?***
@@ -76,7 +76,7 @@ State: March 2025
    - extensively many nodes in nodepool?
     => Nodepools are instance-pools, so all checks from instances and instance-pools apply here YAY!!!
 
-#### block storage (D) 3 
+#### block storage (D) 3 y
  - block storage volumes
    - creation date old - no
    - correspondig snapshot exists(backup?) - yes
@@ -124,7 +124,7 @@ State: March 2025
  => health check: has built-in checks so no one can go higher
  => get service, get healthcheck, get instance-sec-group and check if security group does not allow healthcheck? => no positive healthcheck, now service. so: sec-group must enable access to this. 
 
-#### private networks (D) 2
+#### private networks (D) 2 y
  - any dangers with too big private networks? - no
  - maybe subnet almost full - threshold of 80% of ip leases of network
 
@@ -137,17 +137,17 @@ no checks itself, but influences other services
 # Storage ca.15
 
 #### Buckets (D) 14+
- - how old is bucket?
  - CORS rules: https://<bucket-name>.sos-ch-dk-2.exo.io/?cors
+   - CORS Wildcard at origin (CWE-942)
  - ACLs? Analysis with boto3 
    - Cross Account access?
    - Public Write?
    - public Access?
    - Public List ACL?
    - Public Write ACL?
+   ***- AllUsers FULL_ACCESS*** y
  - Versioning enabled?
- - Object Lock?
- - cross region replication?
+ - cross region replication? - not possible in exoscale
 
 
 # DBaaS (ca. 47)

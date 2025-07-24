@@ -1,0 +1,7 @@
+{
+    "control_name": "storage_buckets_acl_full_control_AllUsers",
+    "control_description": "Check if any buckets grant full access to the AllUsers group.",
+    "risk": "With wide open access lists comes a high risk of data disclosure.",
+    "recommendation": "Make sure to create and use more fine grained access list rules.",
+    "severity": "high"
+}

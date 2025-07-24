@@ -427,5 +427,39 @@ class PrivateNetworkContainer(BaseModel):
         validate_by_name = True
         validate_assignment = True
 
+class Grantee(BaseModel):
+    display_name: Optional[str] = Field(default=None, alias="DisplayName")
+    id: Optional[str] = Field(default=None, alias="ID")
+    grantee_type: Optional[str] = Field(default=None, alias="Type")
+    uri: Optional[str] = Field(default=None, alias="URI")
+
+class ACL(BaseModel):
+    grantee: Optional['Grantee'] = Field(default=None, alias="Grantee")
+    permission: Optional[str] = Field(default=None, alias="Permission")
+
+#https://docs.aws.amazon.com/AmazonS3/latest/API/API_CORSRule.html:
+class CorsRules(BaseModel): 
+    allowed_headers: Optional[List[str]] = Field(default=None, alias="AllowedHeaders")
+    allowed_methods: Optional[List[str]] = Field(default=None, alias="AllowedMethods")
+    allowed_origins: Optional[List[str]] = Field(default=None, alias="AllowedOrigins")
+    exposed_headers: Optional[List[str]] = Field(default=None, alias="ExposeHeaders")
+    id: Optional[str] = Field(default=None, alias="ID")
+    max_age_seconds: Optional[int] = Field(default=None, alias="MaxAgeSeconds")
+
+class SOSBucket(BaseModel):
+    name: Optional[str] = None
+    created_at: Optional[str] = Field(default=None, alias="created-at")
+    zone_name: Optional[str] = Field(default=None, alias="zone-name")
+    size: Optional[int] = None
+    acl: Optional[List['ACL']] = Field(default=None, alias="ACL")
+    cors: Optional[List['CorsRules']] = Field(default=None, alias="CORSRules")
+    versioning: Optional[str] = Field(default=None, alias="Status")
+
+class SOSBucketContainer(BaseModel):
+    sos_buckets_usage: Optional[List['SOSBucket']] = Field(default=None, alias="sos-buckets-usage")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
 
 

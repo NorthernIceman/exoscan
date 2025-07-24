@@ -72,6 +72,15 @@
     altered gitignore
     module compute is now complete (yay)
 
+24.7.:
+    added inventory and models for buckets
+    figured out how to get acls and cors rules from buckets.
+    added storage_buckets_acl_full_control_AllUsers
+    extend models to parse CORS, object lock (bool) and versioning (bool)
+    added storage_buckets_versioning_enabled
+    added storage_buckets_cors_unrestricted_wildcard
+
+
 
 
 

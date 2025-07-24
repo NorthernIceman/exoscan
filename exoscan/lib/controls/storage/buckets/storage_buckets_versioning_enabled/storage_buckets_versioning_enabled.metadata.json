@@ -1,0 +1,7 @@
+{
+    "control_name": "storage_buckets_versioning_enabled",
+    "control_description": "Check if any buckets have versioning not enabled.",
+    "risk": "File Versioning facilitates the recovery of data from user actions or application failures.",
+    "recommendation": "Enable object versioning for important or sensitive information.",
+    "severity": "medium"
+}
