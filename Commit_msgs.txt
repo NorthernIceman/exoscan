@@ -80,6 +80,12 @@
     added storage_buckets_versioning_enabled
     added storage_buckets_cors_unrestricted_wildcard
 
+25.7.:
+    storage_buckets_acl_read_AllUsers
+    storage_buckets_acl_read_write_AllUsers
+    
+
+
 
 
 

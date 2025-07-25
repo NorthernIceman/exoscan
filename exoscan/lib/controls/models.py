@@ -1,7 +1,5 @@
-from abc import abstractmethod
 from typing import Dict, Any
 import json
-from dataclasses import dataclass
 from typing import List, Dict, Optional
 from datetime import datetime
 from pydantic import BaseModel, Field
@@ -454,7 +452,8 @@ class SOSBucket(BaseModel):
     acl: Optional[List['ACL']] = Field(default=None, alias="ACL")
     cors: Optional[List['CorsRules']] = Field(default=None, alias="CORSRules")
     versioning: Optional[str] = Field(default=None, alias="Status")
-
+    #cdn is impossible to view via api???
+    
 class SOSBucketContainer(BaseModel):
     sos_buckets_usage: Optional[List['SOSBucket']] = Field(default=None, alias="sos-buckets-usage")
     class Config:

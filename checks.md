@@ -148,6 +148,7 @@ no checks itself, but influences other services
    ***- AllUsers FULL_ACCESS*** y
  - Versioning enabled?
  - cross region replication? - not possible in exoscale
+ - first 100 objects? 
 
 
 # DBaaS (ca. 47)

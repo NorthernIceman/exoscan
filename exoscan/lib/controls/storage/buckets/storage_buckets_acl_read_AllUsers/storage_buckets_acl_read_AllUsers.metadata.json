@@ -1,0 +1,7 @@
+{
+    "control_name": "storage_buckets_acl_read_AllUsers",
+    "control_description": "Check if any buckets grant read access to the AllUsers group.",
+    "risk": "Read access puts poses the risk of data disclosure.",
+    "recommendation": "Make sure to create and use more fine grained access list rules.",
+    "severity": "high"
+}
