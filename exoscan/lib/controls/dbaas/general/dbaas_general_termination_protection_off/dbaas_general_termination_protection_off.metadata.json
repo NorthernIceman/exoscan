@@ -1,0 +1,7 @@
+{
+    "control_name": "dbaas_general_termination_protection_off",
+    "control_description": "Check if any dbaas does not have termination protection enabled.",
+    "risk": "Having termination protection enabled will prevent unintended disruptions to your services.",
+    "recommendation": "Enable termination protection on your resources if deemed necessary.",
+    "severity": "medium"
+}

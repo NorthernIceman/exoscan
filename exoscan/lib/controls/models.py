@@ -460,5 +460,80 @@ class SOSBucketContainer(BaseModel):
         validate_by_name = True
         validate_assignment = True
 
+class DBaaService(BaseModel):
+    updated_at: Optional[str] = Field(default=None, alias="updated-at")
+    node_count: Optional[int] = Field(default=None, alias="node-count")
+    node_cpu_count: Optional[int] = Field(default=None, alias="node-cpu-count")
+    integrations: Optional[List[str]] = None
+    zone: Optional[str] = None
+    name: Optional[str] = None
+    type: Optional[str] = None
+    state: Optional[str] = None
+    termination_protection: Optional[bool] = Field(default=None, alias="termination-protection")
+    notifications: Optional[List[str]] = None
+    disk_size: Optional[int] = Field(default=None, alias="disk-size")
+    node_memory: Optional[int] = None
+    created_at: Optional[str] = Field(default=None, alias="created-at")
+    plan: Optional[str] = None
+
+class DBaaServiceContainer(BaseModel):
+    dbaas_services: Optional[List['DBaaService']] = Field(default=None, alias="dbaas-services")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
+class ConnectionInformation(BaseModel):
+    uri: Optional[List[str]] = None
+    params: Optional[List[dict]] = None
+    standby: Optional[List[str]] = None
+    syncing: Optional[List[str]] = None
+
+class Backups(BaseModel):
+    backup_name: Optional[str] = Field(default=None, alias="backup-name")
+    backup_time: Optional[str] = Field(default=None, alias="backup-time")
+    data_size: Optional[int] = Field(default=None, alias="data-size")
+
+class Maintenance(BaseModel):
+    dow: Optional[str] = None
+    time: Optional[str] = None
+    updates: Optional[List[dict]] = None
+
+class URIParams(BaseModel):
+    password: Optional[str] = None
+    sslmode: Optional[str] = None
+    port: Optional[int] = None
+    dbname: Optional[str] = None
+    host: Optional[str] = None
+    user: Optional[str] = None
+
+class Users(BaseModel):
+    type: Optional[str] = None
+    username: Optional[str] = None
+    password: Optional[str] = None
+    allow_replication: Optional[bool] = Field(default=None, alias="allow-replication")
+
+class DBaaServicePostgreSQL(DBaaService):
+    connection_info: Optional['ConnectionInformation'] = Field(default=None, alias="connection-info")
+    backup_schedule: Optional[dict] = Field(default=None, alias="backup-schedule")
+    prometheus_uri: Optional[dict] = Field(default=None, alias="prometheus-uri")
+    ip_filter: Optional[List[str]] = Field(default=None, alias="ip-filter")
+    backups: Optional[List['Backups']] = None
+    maintenance: Optional['Maintenance'] = None
+    uri_params: Optional['URIParams'] = Field(default=None, alias="uri-params")
+    pg_settings: Optional[dict] = Field(default=None, alias="pg-settings")
+    users: Optional[List['Users']] = None
+
+class DBaaServicePostgreSQLContainer(BaseModel):
+    dbaas_pg_services: Optional[List['DBaaServicePostgreSQL']] = Field(default=None, alias="dbaas-pg-services")
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
+
+
+
+
+
+
+
 
 

@@ -1,0 +1,87 @@
+{
+  "dbaas-pg-services": [
+    {
+      "updated-at": "2025-07-29T04:07:21Z",
+      "node-count": 1,
+      "node-cpu-count": 2,
+      "integrations": [],
+      "zone": "at-vie-1",
+      "name": "testpostgresqllinstance",
+      "type": "pg",
+      "state": "running",
+      "termination-protection": true,
+      "notifications": [],
+      "disk-size": 8589934592,
+      "node_memory": null,
+      "created-at": "2025-07-28T15:57:04Z",
+      "plan": "hobbyist-2",
+      "connection-info": {
+        "uri": [
+          "postgres://avnadmin@185.150.9.210:21699/defaultdb?sslmode=require"
+        ],
+        "params": [
+          {
+            "password": "",
+            "sslmode": "require",
+            "port": "21699",
+            "dbname": "defaultdb",
+            "host": "185.150.9.210",
+            "user": "avnadmin"
+          }
+        ],
+        "standby": [],
+        "syncing": []
+      },
+      "backup-schedule": {
+        "backup-hour": 0,
+        "backup-minute": 11
+      },
+      "prometheus-uri": {},
+      "ip-filter": [
+        "0.0.0.0/0"
+      ],
+      "backups": [
+        {
+          "backup-name": "2025-07-28_16-07_0.00000000.pghoard",
+          "backup-time": "2025-07-28T16:07:12Z",
+          "data-size": 33781975
+        },
+        {
+          "backup-name": "2025-07-29_04-07_0.00000000.pghoard",
+          "backup-time": "2025-07-29T04:07:12Z",
+          "data-size": 34037975
+        }
+      ],
+      "maintenance": {
+        "dow": "thursday",
+        "time": "03:41:23",
+        "updates": []
+      },
+      "uri-params": {
+        "password": "",
+        "sslmode": "require",
+        "port": 21699,
+        "dbname": "defaultdb",
+        "host": "testpostgresqllinstance-exoscale-604fbe61-61e2-47a1-b71d-359d56.e.aivencloud.com",
+        "user": "avnadmin"
+      },
+      "pg-settings": {
+        "password_encryption": "md5"
+      },
+      "users": [
+        {
+          "type": "primary",
+          "username": "avnadmin",
+          "password": "",
+          "allow-replication": true
+        },
+        {
+          "type": "normal",
+          "username": "testuser",
+          "password": "",
+          "allow-replication": false
+        }
+      ]
+    }
+  ]
+}

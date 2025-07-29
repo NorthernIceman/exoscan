@@ -74,7 +74,6 @@ def get_instance_types(
                     for inst_type in response.json().get("instance-types", []):
                         inst_id = inst_type.get("id")
                         if inst_id and inst_id not in seen_ids:
-                            inst_type["region"] = region
                             all_instance_types.append(inst_type)
                             seen_ids.add(inst_id)
 

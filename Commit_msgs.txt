@@ -83,6 +83,19 @@
 25.7.:
     storage_buckets_acl_read_AllUsers
     storage_buckets_acl_read_write_AllUsers
+
+28.07.:
+    added model for general databases and inventory
+    added dbaas_general_termination_protection_off
+    
+29.07.:
+    fixed inventory for general databases
+    added inventory for postgres and added model for postgres, can use again for mysql and more 
+    added dbaas_postgresql_ip_filter_allows_all
+    
+    ToDo: add model and inventory for mysql and postgresql
+        add controls for mysql and postgresql 
+
     
 
 
