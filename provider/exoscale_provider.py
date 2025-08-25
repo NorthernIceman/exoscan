@@ -3,7 +3,6 @@ from log_conf.logger import logger
 from exoscale_auth import ExoscaleV2Auth
 import boto3
 from botocore.client import Config
-import requests
 
 EXOSCALE_API_KEY = os.getenv('EXOSCALE_API_KEY')
 EXOSCALE_API_SECRET = os.getenv('EXOSCALE_API_SECRET')
@@ -47,6 +46,8 @@ def get_s3_client(zone):
         logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
         return
 
+def return_regions() -> list:
+    return ("at-vie-1", "at-vie-2", "bg-sof-1", "ch-gva-2", "ch-dk-2", "de-fra-1", "de-muc-1", "hr-zag-1" )
     
 
 

@@ -1,7 +1,0 @@
-{
-    "control_name": "compute_security_groups_unused_group",
-    "control_description": "Check if any security-group is unused.",
-    "risk": "Having unused security groups can reduce transparency and complicate the management of network policies.",
-    "recommendation": "Review if unused groups are still relevant.",
-    "severity": "informational"
-}

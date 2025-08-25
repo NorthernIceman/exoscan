@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_sg_allow_ingress_from_quad_zero",
+    "control_description": "Check if any security group allows ingress from 0.0.0.0/0 or ::0/0.",
+    "risk": "Security-Group allows unrestricted inbound traffic on layer 3.",
+    "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
+    "severity": "medium"
+}

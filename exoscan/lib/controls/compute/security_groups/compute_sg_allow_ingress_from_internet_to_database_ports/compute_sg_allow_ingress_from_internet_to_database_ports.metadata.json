@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_sg_allow_ingress_from_internet_to_database_ports",
+    "control_description": "Check if any security group allows ingress from 0.0.0.0/0 or ::0/0 to the ports 27017, 27018 (mongodb), 7199, 9160, 8888 (cassandra), 9092 (kafka), 11211 (memcached), 3306 (mysql), 1521, 2483 (oracle), 5432 (postgres), 6379 (redis), 1433, 1434 (sql_server).",
+    "risk": "Security-Group allows inbound traffic for database service ports.",
+    "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
+    "severity": "medium"
+}

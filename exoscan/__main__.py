@@ -5,7 +5,6 @@ from exoscan.lib.banner import print_banner
 from exoscan.lib.parser import parser
 from exoscan.lib.controls.controls_loader import fetch_controls
 from exoscan.lib.controls.execute_controls import execute_controls
-import requests, sys
 
 def exoscan():
     #do not produce list of assets in standard-function
@@ -20,8 +19,8 @@ def exoscan():
 
     findings = []
     controls_to_execute = fetch_controls()
-
-    findings.extend(execute_controls(controls_to_execute))
+    results = execute_controls(controls_to_execute)
+    if results: findings.extend(results)
 
     for finding in findings:
         finding.print_finding()

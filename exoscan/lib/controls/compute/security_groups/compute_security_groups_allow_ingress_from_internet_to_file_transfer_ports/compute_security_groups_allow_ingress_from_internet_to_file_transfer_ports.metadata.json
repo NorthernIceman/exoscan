@@ -1,7 +1,0 @@
-{
-    "control_name": "compute_security_groups_allow_ingress_from_internet_to_file_transfer_ports",
-    "control_description": "Check if any security group allows ingress from 0.0.0.0/0 or ::0/0 to the ports 20 and 21 (FTP).",
-    "risk": "Security-Group allows inbound traffic for ports associated with file transfer protocols.",
-    "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
-    "severity": "medium"
-}

@@ -1,7 +1,0 @@
-{
-    "control_name": "compute_security_groups_allow_ingress_from_internet_to_kerberos_ldap_ports",
-    "control_description": "Check if any security group allows ingress from 0.0.0.0/0 or ::0/0 to the ports for kerberos [88, 464, 749, 750] or ldap [389, 636].",
-    "risk": "Security Groups & Medium & Security-Group allows inbound traffic for Kerberos and LDAP ports.",
-    "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
-    "severity": "medium"
-}

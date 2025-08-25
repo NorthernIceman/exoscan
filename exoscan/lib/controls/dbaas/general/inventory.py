@@ -1,7 +1,6 @@
 import requests, os, json, sys
-from provider.exoscale_provider import authenticate
+from provider.exoscale_provider import authenticate, return_regions
 from exoscan.lib.controls.models import DBaaService, DBaaServiceContainer
-from provider.return_regions import return_regions
 from log_conf.logger import logger 
 
 CACHE_FILE = "exoscan/lib/controls/dbaas/general/general_dbaas.inventory.json"

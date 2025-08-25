@@ -10,8 +10,10 @@ def fetch_controls() -> set:
         controls = import_all_controls()
 
         for control in controls: 
-            controls_modules_path.append('.'.join((f"{control[1]}\\{control[0]}").split("\\")[-7:]))
-
+            if "\\" in control[1]:
+                controls_modules_path.append('.'.join((f"{control[1]}\\{control[0]}").split("\\")[-7:])) #windows path
+            elif "/" in control[1]:
+                controls_modules_path.append('.'.join((f"{control[1]}/{control[0]}").split("/")[-7:])) #linux path
         return controls_modules_path
     except Exception as error:
         logger.error(

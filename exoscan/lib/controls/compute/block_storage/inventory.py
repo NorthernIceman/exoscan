@@ -1,7 +1,6 @@
 import requests, os, json, sys
-from provider.exoscale_provider import authenticate
+from provider.exoscale_provider import authenticate, return_regions
 from exoscan.lib.controls.models import BlockStorageVolume, BlockStorageSnapshot, BlockStorageSnapshotContainer, BlockStorageVolumeContainer
-from provider.return_regions import return_regions
 from log_conf.logger import logger 
 
 CACHE_FILE_VOLUME = "exoscan/lib/controls/compute/block_storage/block_storage_volume.inventory.json"
@@ -23,7 +22,6 @@ def get_block_storage_volumes(
                 response = requests.get(f"https://api-{region}.exoscale.com/v2/block-storage", auth=auth)
                 if response.status_code == 200:
                     for volume in response.json().get("block-storage-volumes", []):
-                        print(f"{volume["id"]}")
                         details_response  = requests.get(f"https://api-{region}.exoscale.com/v2/block-storage/{volume["id"]}", auth=auth)
                         if details_response.status_code == 200:
                             all_volumes.append(details_response.json())

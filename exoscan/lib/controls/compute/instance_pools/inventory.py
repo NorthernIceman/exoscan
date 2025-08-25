@@ -1,7 +1,6 @@
 import requests, os, json, sys
-from provider.exoscale_provider import authenticate
+from provider.exoscale_provider import authenticate, return_regions
 from exoscan.lib.controls.models import InstancePool, InstancePoolContainer
-from provider.return_regions import return_regions
 from log_conf.logger import logger 
 
 #here shall be functions to build an inventory, iterate through all regions and list the instances. 
