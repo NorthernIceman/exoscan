@@ -1,0 +1,7 @@
+{
+    "control_name": "dbaas_mysql_ip_filter_allows_all",
+    "control_description": "Check if any MySQL dbaas has 0.0.0.0/0 as IP-filter.",
+    "risk": "Having no access restrictions exposes your resources to the internet and enables potential unauthorized access.",
+    "recommendation": "Set more fine-grained IP-filter.",
+    "severity": "high"
+}

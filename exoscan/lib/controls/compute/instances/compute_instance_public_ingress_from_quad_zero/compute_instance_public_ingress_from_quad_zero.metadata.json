@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_public_ingress_from_quad_zero",
     "control_description": "Check if instance is public and security-group allows unrestricted ingress traffic on Layer 3.",
-    "risk": "The instance might be exposed to the internet without proper security measures, leading to potential unauthorized access.",
+    "risk": "The instance might be exposed to the internet on layer 3 without proper security measures, leading to potential unauthorized access.",
     "recommendation": "Make sure to restrict incoming and outgoing traffic as strictly as possible.",
     "severity": "critical"
 }

@@ -1,0 +1,7 @@
+{
+    "control_name": "compute_security_groups_allow_ingress_from_prefixes_length_to_16",
+    "control_description": "Check if any security group allows ingress from IPv4 address spaces up to a prefix length of 16.",
+    "risk": "Security-Group allows inbound traffic on layer 3 from IPv4 networks with a prefix of up to 16.",
+    "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
+    "severity": "medium"
+}

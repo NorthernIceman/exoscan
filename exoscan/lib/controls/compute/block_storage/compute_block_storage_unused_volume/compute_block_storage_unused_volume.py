@@ -13,7 +13,7 @@ def execute_logic(metadata_path):
         findings = []
         unused_volumes = []
         for volume in all_volumes.block_storage_volumes:
-            if not volume.instance.id: 
+            if not volume.instance.id and volume.block_storage_snapshots: 
                 unused_volumes.append(volume.name) 
         
         if unused_volumes:

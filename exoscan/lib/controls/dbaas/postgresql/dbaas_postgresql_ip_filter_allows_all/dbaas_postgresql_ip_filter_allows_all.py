@@ -14,8 +14,7 @@ def execute_logic(metadata_path):
         found_dbs = []
 
         for db in all_pg_dbaas.dbaas_pg_services:
-            print(db.ip_filter)
-            if db.ip_filter == "0.0.0.0/0":
+            if "0.0.0.0/0" in db.ip_filter:
                 found_dbs.append(db.name)
   
         if found_dbs:

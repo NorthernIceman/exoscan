@@ -3,5 +3,5 @@
     "control_description": "Check if any block storage volume has no corresponding snapshots.",
     "risk": "Having no recent snapshots may indicate gaps in a reliable backup and recovery strategy.",
     "recommendation": "Create volume snapshots regularly.",
-    "severity": "high"
+    "severity": "medium"
 }

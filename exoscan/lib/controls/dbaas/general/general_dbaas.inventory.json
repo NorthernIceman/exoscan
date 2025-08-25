@@ -1,19 +1,19 @@
 {
   "dbaas-services": [
     {
-      "updated-at": "2025-07-29T04:07:21Z",
+      "updated-at": "2025-07-31T10:32:00Z",
       "node-count": 1,
       "node-cpu-count": 2,
       "integrations": [],
-      "zone": "at-vie-1",
-      "name": "testpostgresqllinstance",
-      "type": "pg",
-      "state": "running",
-      "termination-protection": true,
+      "zone": "ch-dk-2",
+      "name": "test",
+      "type": "mysql",
+      "state": "rebuilding",
+      "termination-protection": false,
       "notifications": [],
       "disk-size": 8589934592,
       "node_memory": null,
-      "created-at": "2025-07-28T15:57:04Z",
+      "created-at": "2025-07-31T10:32:00Z",
       "plan": "hobbyist-2"
     }
   ]

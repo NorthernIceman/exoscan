@@ -3,5 +3,5 @@
     "control_description": "Check if any elastic-ip is unused.",
     "risk": "Having unused elastic-IPs will increase costs.",
     "recommendation": "Review if unused IPs are still relevant.",
-    "severity": "medium"
+    "severity": "informational"
 }

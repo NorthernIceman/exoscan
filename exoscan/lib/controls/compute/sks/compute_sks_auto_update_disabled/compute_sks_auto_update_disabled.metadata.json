@@ -1,7 +1,7 @@
 {
     "control_name": "compute_sks_auto_update_disabled",
     "control_description": "Check if any SKS-Cluster has auto-update disabled.",
-    "risk": "By keeping Auto-Update disabled, administrators take on the responsiblity of keeping their cluster up-to-date, which may lead to outdated resources and vulnerabilities.",
+    "risk": "By keeping auto-update disabled, the control plane version might become deprecated, which may lead to outdated resources and vulnerabilities.",
     "recommendation": "Make sure to enable auto-update or implement a lifecycle to keep your resources updated.",
     "severity": "high"
 }

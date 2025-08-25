@@ -26,7 +26,7 @@ def execute_logic(metadata_path):
                         if examined_sg.rules: #if it has rules, check them
                             found_rule = []
                             for rule in examined_sg.rules:
-                                if (rule.network == "0.0.0.0/0" or rule.network == "::/0") and rule.flow_direction == "ingress":
+                                if rule.flow_direction == "ingress": # if incoming traffic
                                     if rule.start_port and rule.end_port: #if the rule has ports defined
                                         conf_risky_ports = []
                                         for port in risky_ports:

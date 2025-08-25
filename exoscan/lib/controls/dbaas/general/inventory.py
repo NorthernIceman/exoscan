@@ -40,7 +40,8 @@ def get_dbaas(
             if dbaas_dict: 
                 return dbaas_dict
 
-            raise Exception(f"DBaaS Type'{dbaas_type}' not found in cached inventory.")
+            #logger.warning(f"DBaaS Type'{dbaas_type}' not found in cached inventory.") #logged in calling function, leaving it in here to know why there is this return
+            return
 
         return DBaaServiceContainer.model_validate(json_data)
 

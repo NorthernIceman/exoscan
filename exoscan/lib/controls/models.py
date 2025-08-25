@@ -6,6 +6,10 @@ from pydantic import BaseModel, Field
 from enum import Enum
 from pathlib import Path
 
+class Container(BaseModel):
+    class Config:
+        validate_by_name = True
+        validate_assignment = True
 
 class Severity(str, Enum):
     critical = "critical"
@@ -89,12 +93,8 @@ class SecurityGroup(BaseModel):
         validate_by_name = True
         validate_assignment = True
 
-class SecurityGroupContainer(BaseModel):
+class SecurityGroupContainer(Container):
     security_groups: List[SecurityGroup] = Field(default=None, alias="security-groups")
-
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class InstanceType(BaseModel):
     id: Optional[str] = None
@@ -106,12 +106,8 @@ class InstanceType(BaseModel):
     memory: Optional[int] = None
     zones: Optional[List[str]] = None
 
-class InstanceTypeContainer(BaseModel):
+class InstanceTypeContainer(Container):
     instance_types: List[InstanceType] = Field(default=None, alias="instance-types")
-
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class PrivateNetwork(BaseModel):
     id: str
@@ -140,11 +136,8 @@ class HealthCheck(BaseModel):
     interval: Optional[int] = None
     timeout: Optional[int] = None
 
-class ElasticIPContainer(BaseModel):
+class ElasticIPContainer(Container):
     elastic_ips: List[ElasticIP] = Field(Default=None, alias="elastic-ips")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class Template(BaseModel):
     maintainer: Optional[str] = None
@@ -165,11 +158,8 @@ class Template(BaseModel):
     visibility: Optional[str] = None
     id: Optional[str] = None
 
-class TemplateContainer(BaseModel):
+class TemplateContainer(Container):
     templates: List[Template] = None
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class SSHKey(BaseModel):
     name: str
@@ -213,17 +203,11 @@ class AntiAffinityGroup(BaseModel):
     name: Optional[str] = None
     description: Optional[str] = None
 
-class InstanceContainer(BaseModel):
+class InstanceContainer(Container):
     instances: List[Instance]
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
-class SSHKeyContainer(BaseModel):
+class SSHKeyContainer(Container):
     ssh_keys: List[SSHKey] = Field(default=None, alias="ssh-keys")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class DeployTarget(BaseModel): 
     id: str = None
@@ -257,11 +241,8 @@ class InstancePool(BaseModel):
     ssh_keys: Optional[List[SSHKey]] =  Field(default=None, alias="ssh-keys")
 
 
-class InstancePoolContainer(BaseModel): 
+class InstancePoolContainer(Container): 
     instance_pools: List['InstancePool'] = Field(default=None, alias="instance-pools")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class Taint(BaseModel):
     value: str = None
@@ -325,11 +306,8 @@ class SKSCluster(BaseModel):
     service_cluster_ip_range: Optional[str] = Field(default=None, alias="service-cluster-ip-range")
     cluster_cidr: Optional[str] = Field(default=None, alias="cluster-cidr")
 
-class SKSClusterContainer(BaseModel):
+class SKSClusterContainer(Container):
     sks_cluster: List[SKSCluster] = Field(default=None, alias="sks-clusters")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class LoadBalancer(BaseModel):
     id: Optional[str] = None
@@ -358,11 +336,8 @@ class Service(BaseModel):
     id: Optional[str] = None
     healthcheck_status: Optional[List['HealthCheckStatus']] = Field(default=None, alias="healthcheck-status")
 
-class LoadBalancerContainer(BaseModel):
+class LoadBalancerContainer(Container):
     load_balancers: List['LoadBalancer'] = Field(default=None, alias="load-balancers")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class BlockStorageVolume(BaseModel):
     labels: Optional[Dict[str, str]] = None
@@ -385,17 +360,11 @@ class BlockStorageSnapshot(BaseModel):
     state: Optional[str] = None
     block_storage_volume: Optional[List['BlockStorageVolume']] = Field(default=None, alias="block-storage-volume")
 
-class BlockStorageVolumeContainer(BaseModel):
+class BlockStorageVolumeContainer(Container):
     block_storage_volumes: List['BlockStorageVolume'] = Field(default=None, alias="block-storage-volumes")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
-class BlockStorageSnapshotContainer(BaseModel):
+class BlockStorageSnapshotContainer(Container):
     block_storage_snapshots: List['BlockStorageSnapshot'] = Field(default=None, alias="block-storage-snapshots")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class Leases(BaseModel):
     ip: Optional[str] = None
@@ -419,11 +388,8 @@ class PrivateNetwork(BaseModel):
     netmask: Optional[str] = None
     options: Optional['Options'] = None
 
-class PrivateNetworkContainer(BaseModel):
+class PrivateNetworkContainer(Container):
     private_networks: List['PrivateNetwork'] = Field(default=None, alias="private-networks")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class Grantee(BaseModel):
     display_name: Optional[str] = Field(default=None, alias="DisplayName")
@@ -454,11 +420,8 @@ class SOSBucket(BaseModel):
     versioning: Optional[str] = Field(default=None, alias="Status")
     #cdn is impossible to view via api???
     
-class SOSBucketContainer(BaseModel):
+class SOSBucketContainer(Container):
     sos_buckets_usage: Optional[List['SOSBucket']] = Field(default=None, alias="sos-buckets-usage")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class DBaaService(BaseModel):
     updated_at: Optional[str] = Field(default=None, alias="updated-at")
@@ -476,11 +439,8 @@ class DBaaService(BaseModel):
     created_at: Optional[str] = Field(default=None, alias="created-at")
     plan: Optional[str] = None
 
-class DBaaServiceContainer(BaseModel):
+class DBaaServiceContainer(Container):
     dbaas_services: Optional[List['DBaaService']] = Field(default=None, alias="dbaas-services")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
 
 class ConnectionInformation(BaseModel):
     uri: Optional[List[str]] = None
@@ -506,13 +466,13 @@ class URIParams(BaseModel):
     host: Optional[str] = None
     user: Optional[str] = None
 
-class Users(BaseModel):
+class DBUsers(BaseModel):
     type: Optional[str] = None
     username: Optional[str] = None
     password: Optional[str] = None
     allow_replication: Optional[bool] = Field(default=None, alias="allow-replication")
 
-class DBaaServicePostgreSQL(DBaaService):
+class CommonDBProperties(DBaaService):
     connection_info: Optional['ConnectionInformation'] = Field(default=None, alias="connection-info")
     backup_schedule: Optional[dict] = Field(default=None, alias="backup-schedule")
     prometheus_uri: Optional[dict] = Field(default=None, alias="prometheus-uri")
@@ -520,14 +480,55 @@ class DBaaServicePostgreSQL(DBaaService):
     backups: Optional[List['Backups']] = None
     maintenance: Optional['Maintenance'] = None
     uri_params: Optional['URIParams'] = Field(default=None, alias="uri-params")
-    pg_settings: Optional[dict] = Field(default=None, alias="pg-settings")
-    users: Optional[List['Users']] = None
+    users: Optional[List['DBUsers']] = None
 
-class DBaaServicePostgreSQLContainer(BaseModel):
+class DBaaServicePostgreSQL(CommonDBProperties):
+    pg_settings: Optional[dict] = Field(default=None, alias="pg-settings")
+    
+class DBaaServicePostgreSQLContainer(Container):
     dbaas_pg_services: Optional[List['DBaaServicePostgreSQL']] = Field(default=None, alias="dbaas-pg-services")
-    class Config:
-        validate_by_name = True
-        validate_assignment = True
+
+class DBaaServiceMySQL(CommonDBProperties):
+    mysql_settings: Optional[dict] = Field(default=None, alias="mysql-settings")
+    
+class DBaaServiceMySQLContainer(Container):
+    dbaas_mysql_services: Optional[List['DBaaServiceMySQL']] = Field(default=None, alias="dbaas-mysql-services")
+
+class IAMRole(BaseModel):
+    id: Optional[str] = None
+    name: Optional[str] = None
+    description: Optional[str] = None
+    permissions: Optional[List[str]] = None
+    labels: Optional[Dict[str, str]] = None
+    editable: Optional[bool] = None
+    policy: Optional['IAMPolicy'] = None
+
+class IAMPolicy(BaseModel): 
+    default_service_strategy: str = Field(default=None, alias="default-service-strategy")
+    services: Optional[Dict[str, 'IAMServices']] = None
+
+class IAMServices(BaseModel): 
+    access_type: Optional[str] = Field(default=None, alias="type")
+    rules: Optional[List['IAMRules']] = None
+
+class IAMRules(BaseModel):
+    action: Optional[str] = None
+    expression: Optional[str] = None
+    resources: Optional[List[str]] = None
+
+class IAMUser(BaseModel):
+    sso: Optional[bool] = None
+    two_factor_authentication:  Optional[bool] = Field(default=None, alias="two-factor-authentication")
+    email: str = None #requ.
+    id: Optional[str] = None
+    role: 'IAMRole' = None #req
+    pending: Optional[bool] = None
+
+class IAMRoleContainer(Container):
+    roles: Optional[List['IAMRole']] = Field(default=None, alias="iam-roles")
+
+class IAMUserContainer(Container):
+    users: Optional[List['IAMUser']] = Field(default=None, alias="users")
 
 
 

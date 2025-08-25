@@ -12,7 +12,7 @@ def execute_logic(metadata_path):
             logger.info("No Security-Groups found. Skipping Control compute_security_groups_allow_ingress_from_internet_to_mgmt_ports...")
             return
         findings = []
-        risky_ports = [5, 22, 23, 107, 512, 514, 992, 995, 3389]
+        risky_ports = [22, 23, 512, 514, 992, 995, 3389]
         found_sg = []
         for sg in all_sg.security_groups:
             risky_rules = []

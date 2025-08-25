@@ -1,11 +1,30 @@
-### Python ###
+# Python cache
 __pycache__/
+
+# Sensitive/provider files
 provider/credentials.txt
+
+# Documentation and notes
 checks.md
-Backups/
 ToDos.md
 Commit_msgs.txt
+
+# Log files
 exoscan.log
-exoscan\lib\controls\compute\instances\compute_userdata_password_todo
-exoscan\lib\controls\compute\instances\compute_userdata_password_todo\*
+*.log
+
+# Test files
 test.*
+
+# Inventory files
+*.inventory.json
+
+# Backups (all folders and files named Backups)
+Backups/
+**/Backups/
+*backup.json
+**/*backup.json
+
+# Specific directory and its contents
+exoscan/lib/controls/compute/instances/compute_userdata_password_todo
+exoscan/lib/controls/compute/instances/compute_userdata_password_todo/*

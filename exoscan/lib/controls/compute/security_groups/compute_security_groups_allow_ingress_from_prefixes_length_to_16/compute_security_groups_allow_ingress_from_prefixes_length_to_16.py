@@ -5,14 +5,14 @@ from exoscan.lib.controls.models import Finding
 from log_conf.logger import logger
 
 def execute_logic(metadata_path):
-    logger.info("Executing Control: compute_security_groups_allow_ingress_from_large_ipv4_blocks")
+    logger.info("Executing Control: compute_security_groups_allow_ingress_from_prefixes_length_to_16")
     try: 
         all_sg = get_security_groups()
         if not all_sg.security_groups: 
-            logger.info("No Security-Groups found. Skipping Control compute_security_groups_allow_ingress_from_large_ipv4_blocks...")
+            logger.info("No Security-Groups found. Skipping Control compute_security_groups_allow_ingress_from_prefixes_length_to_16...")
             return
         findings = []
-        prefix_threshold = "24"
+        prefix_threshold = "16"
         found_sg = []
         for sg in all_sg.security_groups:
             risky_rules = []

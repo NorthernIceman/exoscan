@@ -92,9 +92,23 @@
     fixed inventory for general databases
     added inventory for postgres and added model for postgres, can use again for mysql and more 
     added dbaas_postgresql_ip_filter_allows_all
+
+30.07.:
+    added dbaas_postgresql_unreachable
+    added dbaas_postgresql_weak_password_hash
+    added dbaas_postgresql_require_ssl
+    added mysql model, remodeled some things so they inherit properties
+    added inventory for mysql
+
+31.07.:
+    fixed some logic errors in inventory-files for dbaas 
+    added dbaas_mysql_unreachable
+    added dbaas_mysql_require_ssl
+    added inventory and model for iam users
+    added inventory and model for iam roles
+    added iam_users_owner_mfa_enabled
     
-    ToDo: add model and inventory for mysql and postgresql
-        add controls for mysql and postgresql 
+
 
     
 
