@@ -15,7 +15,6 @@ def execute_controls(controls_modules_path):
 
             # Reconstruct path with filename.metadata.json
             metadata_path = Path("/".join(base_path)) / f"{filename}.metadata.json"
-            print(metadata_path)
             control_findings = control.execute_logic(metadata_path)
             if control_findings:
                 findings.extend(control_findings)
