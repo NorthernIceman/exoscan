@@ -1,6 +1,5 @@
 import sys
 from exoscan.lib.controls.compute.security_groups.inventory import get_security_groups
-from exoscan.lib.controls.models import SecurityGroupRule, SecurityGroupContainer, SecurityGroup
 from exoscan.lib.controls.models import Finding
 from log_conf.logger import logger
 

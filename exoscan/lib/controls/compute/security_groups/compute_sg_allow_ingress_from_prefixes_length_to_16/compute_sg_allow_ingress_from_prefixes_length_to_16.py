@@ -1,6 +1,5 @@
 import sys
 from exoscan.lib.controls.compute.security_groups.inventory import get_security_groups
-from exoscan.lib.controls.models import SecurityGroupRule, SecurityGroupContainer, SecurityGroup
 from exoscan.lib.controls.models import Finding
 from log_conf.logger import logger
 
@@ -19,7 +18,7 @@ def execute_logic(metadata_path):
             for rule in sg.rules:
                 if rule.network != None and rule.flow_direction == "ingress" and not (rule.network.startswith("10.") or rule.network.startswith("172.") or rule.network.startswith("192.168.")): 
                     prefix = rule.network.split('/')[1]
-                    if prefix <= prefix_threshold and not "0": #not 0 cause there is another control doing this
+                    if prefix <= prefix_threshold and prefix != "0": #not 0 cause there is another control doing this
                         risky_rules.append(f"(Rule-ID: {rule.id})")
             if risky_rules:     
                 rules_str = "\n    ".join(risky_rules)

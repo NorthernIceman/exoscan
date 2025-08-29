@@ -7,8 +7,6 @@ from exoscan.lib.controls.controls_loader import fetch_controls
 from exoscan.lib.controls.execute_controls import execute_controls
 
 def exoscan():
-    #do not produce list of assets in standard-function
-    #list_assets = 0
 
     #print banner and parsing instructions
     print_banner()
@@ -24,8 +22,6 @@ def exoscan():
 
     for finding in findings:
         finding.print_finding()
-
-    #TODO: cleanup all inventory files after program is done
 
 if __name__ == "__main__":
     exoscan()
