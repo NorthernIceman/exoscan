@@ -5,19 +5,19 @@ from exoscan.lib.controls.models import Finding
 from log_conf.logger import logger
 
 def execute_logic(metadata_path):
-    logger.info("Executing Control: compute_instance_public_ingress_risky_ports")
+    logger.info("Executing Control: compute_instance_public_ingress_mail_ports")
     try: 
         all_instances = get_instances()
         if not all_instances.instances: 
-            logger.info("No instances found. Skipping Control compute_instance_public_ingress_risky_ports...")
+            logger.info("No instances found. Skipping Control compute_instance_public_ingress_mail_ports...")
             return
         
         findings = []
         found_instances = []
-        risky_ports = [21, 25, 110, 135, 143, 445, 3000, 4333, 5000]
+        risky_ports =  [25, 110, 143]
 
         for instance in all_instances.instances:
-            if instance.public_ip_assignment != "none": #security groups cannot be attached to private instances, but maybe they change this someday
+            if instance.public_ip_assignment != "none":
                 sglist = instance.security_groups
                 found_sg = []
                 for sg in sglist:

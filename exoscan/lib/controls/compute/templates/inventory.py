@@ -1,15 +1,19 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate, return_regions
 from exoscan.lib.controls.models import Template, TemplateContainer
 from log_conf.logger import logger 
 
-CACHE_FILE_TEMPLATE = "exoscan/lib/controls/compute/templates/templates.inventory.json"
+
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="templates_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
 
 def get_instance_templates(
     template_id: str = None
 ) -> TemplateContainer | Template:
     try:
-        if not os.path.exists(CACHE_FILE_TEMPLATE):
+        if not os.path.exists(CACHE_FILE):
             logger.info("Instance template cache not found. Creating full inventory...")
             auth = authenticate()
             regions = return_regions()
@@ -27,11 +31,11 @@ def get_instance_templates(
 
             container = TemplateContainer.model_validate({"templates": all_templates})
 
-            with open(CACHE_FILE_TEMPLATE, "w") as f:
+            with open(CACHE_FILE, "w") as f:
                 json.dump(container.model_dump(mode="json", by_alias=True), f, indent=2)
 
 
-        with open(CACHE_FILE_TEMPLATE, "r") as f:
+        with open(CACHE_FILE, "r") as f:
             json_data = json.load(f)
 
 

@@ -16,7 +16,7 @@ def execute_logic(metadata_path):
         for sg in all_sg.security_groups:
             risky_rules = []
             for rule in sg.rules:
-                if rule.network == "0.0.0.0/0" or "::0/0" and rule.flow_direction == "ingress":
+                if (rule.network == "0.0.0.0/0" or rule.network == "::0/0") and rule.flow_direction == "ingress":
                     risky_rules.append(f"(Rule-ID: {rule.id})")
             if risky_rules: 
                 rules_str = "\n    ".join(risky_rules)

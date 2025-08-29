@@ -1,10 +1,13 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate
 from exoscan.lib.controls.models import DBaaServicePostgreSQL, DBaaServicePostgreSQLContainer
 from exoscan.lib.controls.dbaas.general.inventory import get_dbaas
 from log_conf.logger import logger 
 
-CACHE_FILE = "exoscan/lib/controls/dbaas/postgresql/postgresql.inventory.json"
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="postgresql_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
 
 def get_dbaas_pg() -> DBaaServicePostgreSQL | DBaaServicePostgreSQLContainer:
     try:

@@ -1,13 +1,12 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate
 from exoscan.lib.controls.models import SSHKeyContainer, SSHKey
 from log_conf.logger import logger 
 
-#here shall be functions to build an inventory, iterate through all regions and list the ssh_keys. 
-#to save api-calls, a file is created the first time a request is made
-#TODO: cleanup all inventory files after program is done
-
-CACHE_FILE = "exoscan/lib/controls/compute/ssh_keys/ssh_keys.inventory.json"
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="ssh_keys_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
 
 def get_ssh_keys() -> SSHKeyContainer | SSHKey:
       

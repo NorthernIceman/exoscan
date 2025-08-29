@@ -18,13 +18,6 @@ class Severity(str, Enum):
     low = "low"
     informational = "informational"
 
-class ControlMeta(BaseModel):
-    check_name: str
-    check_description: str
-    risk: str
-    service: str
-    recommendation: str
-    Severity: Severity
         
 class ControlMetadata(BaseModel):
     severity: Severity
@@ -112,9 +105,6 @@ class InstanceTypeContainer(Container):
 class PrivateNetwork(BaseModel):
     id: str
     mac_address: Optional[str] = None
-
-class PrivateNetwork(BaseModel):
-    id: Optional[str] = None
 
 class ElasticIP(BaseModel):
     ip: Optional[str] = None

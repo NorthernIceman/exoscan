@@ -1,9 +1,12 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate
 from exoscan.lib.controls.models import IAMRole, IAMRoleContainer
 from log_conf.logger import logger 
 
-CACHE_FILE = "exoscan/lib/controls/iam/roles/roles.inventory.json"
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="iam_roles_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
 
 def get_roles(
         role_id: str = None

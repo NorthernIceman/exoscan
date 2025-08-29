@@ -1,9 +1,12 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate, return_regions
 from exoscan.lib.controls.models import DBaaService, DBaaServiceContainer
 from log_conf.logger import logger 
 
-CACHE_FILE = "exoscan/lib/controls/dbaas/general/general_dbaas.inventory.json"
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="dbaas_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
 
 def get_dbaas(
         dbaas_type: str = None

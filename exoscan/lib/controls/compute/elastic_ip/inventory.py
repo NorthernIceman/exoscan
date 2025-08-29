@@ -1,9 +1,12 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate, return_regions
 from exoscan.lib.controls.models import ElasticIP, ElasticIPContainer
 from log_conf.logger import logger 
 
-CACHE_FILE = "exoscan/lib/controls/compute/elastic_ip/elastic_ip.inventory.json"
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="elastic_ip_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
 
 def get_elastic_ip(
         elastic_ip_id: str = None

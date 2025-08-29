@@ -1,9 +1,12 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate, get_s3_client
 from exoscan.lib.controls.models import SOSBucket, SOSBucketContainer
 from log_conf.logger import logger 
 
-CACHE_FILE = "exoscan/lib/controls/storage/buckets/buckets.inventory.json"
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="sos_buckets_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
 
 def get_sos_buckets() -> SOSBucketContainer | SOSBucket:
       

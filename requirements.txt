@@ -3,4 +3,4 @@ boto3>=1.40.16
 importlib>=1.0.4
 pydantic>=2.0
 python-dotenv>=1.0
-loguru>=0.7
+requests>=2.32.3

@@ -2,7 +2,7 @@
 from provider.exoscale_provider import authenticate
 from log_conf.logger import logger, set_logging_config
 from exoscan.lib.banner import print_banner
-from exoscan.lib.parser import parser
+from parser import parser
 from exoscan.lib.controls.controls_loader import fetch_controls
 from exoscan.lib.controls.execute_controls import execute_controls
 

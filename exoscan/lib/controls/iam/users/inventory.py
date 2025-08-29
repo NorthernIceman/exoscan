@@ -1,9 +1,12 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate
 from exoscan.lib.controls.models import IAMUser, IAMUserContainer
 from log_conf.logger import logger 
 
-CACHE_FILE = "exoscan/lib/controls/iam/users/users.inventory.json"
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="iam_users_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
 
 def get_users(
         user_id: str = None

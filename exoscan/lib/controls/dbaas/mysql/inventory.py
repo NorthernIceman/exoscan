@@ -1,10 +1,13 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate
 from exoscan.lib.controls.models import DBaaServiceMySQL, DBaaServiceMySQLContainer
 from exoscan.lib.controls.dbaas.general.inventory import get_dbaas
 from log_conf.logger import logger 
 
-CACHE_FILE = "exoscan/lib/controls/dbaas/mysql/mysql.inventory.json"
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="mysql_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
 
 def get_dbaas_mysql() -> DBaaServiceMySQL | DBaaServiceMySQLContainer:
     try:

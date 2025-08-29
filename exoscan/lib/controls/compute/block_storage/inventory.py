@@ -1,10 +1,17 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate, return_regions
 from exoscan.lib.controls.models import BlockStorageVolume, BlockStorageSnapshot, BlockStorageSnapshotContainer, BlockStorageVolumeContainer
 from log_conf.logger import logger 
 
-CACHE_FILE_VOLUME = "exoscan/lib/controls/compute/block_storage/block_storage_volume.inventory.json"
-CACHE_FILE_SNAPSHOT = "exoscan/lib/controls/compute/block_storage/instance_snapshot.inventory.json"
+_temp_cache_volume = tempfile.NamedTemporaryFile(
+    prefix="volume_inventory_", suffix=".json", delete=False
+)
+_temp_cache_snapshot = tempfile.NamedTemporaryFile(
+    prefix="snapshot_inventory_", suffix=".json", delete=False
+)
+
+CACHE_FILE_VOLUME = _temp_cache_volume.name
+CACHE_FILE_SNAPSHOT = _temp_cache_snapshot.name
 
 
 def get_block_storage_volumes(

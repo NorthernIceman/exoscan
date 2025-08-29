@@ -1,14 +1,16 @@
-import requests, os, json, sys
+import requests, os, json, sys, tempfile
 from provider.exoscale_provider import authenticate, return_regions
 from exoscan.lib.controls.models import Instance, InstanceContainer, InstanceType, InstanceTypeContainer, Template, TemplateContainer
 from log_conf.logger import logger 
 
-#here shall be functions to build an inventory, iterate through all regions and list the instances. 
-#to save api-calls, a file is created the first time a request is made
-#TODO: cleanup all inventory files after program is done
-
-CACHE_FILE = "exoscan/lib/controls/compute/instances/instance.inventory.json"
-CACHE_FILE_TYPE = "exoscan/lib/controls/compute/instances/instance_type.inventory.json"
+_temp_cache = tempfile.NamedTemporaryFile(
+    prefix="instance_inventory_", suffix=".json", delete=False
+)
+_temp_cache_type = tempfile.NamedTemporaryFile(
+    prefix="instance_types_inventory_", suffix=".json", delete=False
+)
+CACHE_FILE = _temp_cache.name
+CACHE_FILE_TYPE = _temp_cache_type.name
 
 
 def get_instances(

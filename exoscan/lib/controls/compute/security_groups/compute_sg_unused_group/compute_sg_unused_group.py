@@ -15,7 +15,7 @@ def execute_logic(metadata_path):
         findings = []
         unused_sg = []
         for sg in all_sg.security_groups:
-            if sg.name is "default": continue #the default security group is always present and cannot be deleted
+            if sg.name == "default": continue #the default security group is always present and cannot be deleted
             unused_sg.append(sg.name) #assume all sg are unused
         
             for instance in all_instances.instances:
