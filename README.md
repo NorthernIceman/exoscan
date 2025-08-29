@@ -1,8 +1,4 @@
-  ______   ______   ___   ____  _____ _ ___
- / _ \  \ /  / _ \ / __| / __| / __  |  _  \ 
-|  __/ >    < (_) |\__ \/ (__ | (__) | / \  |
- \___/__/ \__\___/ |___/\____| \_____|_|  |_|
-________________________________________________
+# exoscan
 A tool to scan for configuration weaknesses in Exoscale Cloud. 
 
 As of now, only Windows is supported, that has something to do with the paths. Fixing it as soon as I have time ;)
