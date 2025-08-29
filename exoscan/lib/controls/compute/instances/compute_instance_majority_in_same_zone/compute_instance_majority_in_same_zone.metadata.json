@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_majority_in_same_zone",
     "control_description": "Check if more than 80% of instances are in the same zone.",
-    "risk": "If one zone fails, the majority of instances will seize to operate, decreasing resilience.",
+    "threat": "If one zone fails, the majority of instances will seize to operate, decreasing resilience.",
     "recommendation": "Make sure to spread your instances and vital resources across multiple zones.",
     "severity": "high"
 }

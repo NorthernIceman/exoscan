@@ -6,6 +6,7 @@ from log_conf.logger import logger
 def execute_logic(metadata_path):
     logger.info("Executing Control: compute_block_storage_no_snapshots")
     try: 
+
         all_volumes = get_block_storage_volumes()
         if not all_volumes: 
             logger.info("No Volumes found. Skipping Control compute_block_storage_no_snapshots...")

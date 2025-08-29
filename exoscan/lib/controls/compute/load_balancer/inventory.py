@@ -12,7 +12,7 @@ def get_load_balancer(
         load_balancer_id: str = None
 ) -> LoadBalancerContainer | LoadBalancer:
     try:
-        if not os.path.exists(CACHE_FILE):
+        if not os.path.exists(CACHE_FILE) or os.path.getsize(CACHE_FILE) == 0:
             logger.info("LoadBalancer cache not found. Creating full inventory...")
             regions = return_regions()
             auth = authenticate()

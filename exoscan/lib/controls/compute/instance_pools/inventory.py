@@ -12,7 +12,7 @@ def get_instance_pools(
         instance_pool_id: str = None
 ) -> InstancePoolContainer | InstancePool:
     try:
-        if not os.path.exists(CACHE_FILE):
+        if not os.path.exists(CACHE_FILE) or os.path.getsize(CACHE_FILE) == 0:
             logger.info("InstancePool cache not found. Creating full inventory...")
             regions = return_regions()
             auth = authenticate()

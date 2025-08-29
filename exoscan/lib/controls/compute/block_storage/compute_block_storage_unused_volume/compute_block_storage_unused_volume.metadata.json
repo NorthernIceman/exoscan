@@ -1,7 +1,7 @@
 {
     "control_name": "compute_block_storage_unused_volume",
     "control_description": "Check if any block storage volume is unused.",
-    "risk": "Having unused block storage volumes will increase costs.",
+    "threat": "Having unused block storage volumes will increase costs.",
     "recommendation": "Review if unused block storage volumes are still relevant.",
     "severity": "medium"
 }

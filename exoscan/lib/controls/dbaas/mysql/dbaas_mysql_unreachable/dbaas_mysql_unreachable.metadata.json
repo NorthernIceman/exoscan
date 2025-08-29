@@ -1,7 +1,7 @@
 {
     "control_name": "dbaas_mysql_unreachable",
     "control_description": "Check if any MySQL dbaas has no IP-filters set and is therefore unreachable.",
-    "risk": "Having unintentionally unreachable databases increases costs.",
+    "threat": "Having unintentionally unreachable databases increases costs.",
     "recommendation": "Assign a fine-grained IP-filter.",
     "severity": "medium"
 }

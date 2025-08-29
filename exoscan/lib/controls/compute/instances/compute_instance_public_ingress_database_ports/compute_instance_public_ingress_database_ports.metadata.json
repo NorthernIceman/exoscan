@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_public_ingress_database_ports",
     "control_description": "Check if instance is public and security-group allows ingress traffic from 0.0.0.0/0 or ::0/0 to the ports 27017, 27018 (mongodb), 7199, 9160, 8888 (cassandra), 9092 (kafka), 11211 (memcached), 3306 (mysql), 1521, 2483 (oracle), 5432 (postgres), 6379 (redis), 1433, 1434 (sql_server).",
-    "risk": "The instance might be exposed to the internet on these ports without proper security measures, leading to potential unauthorized access.",
+    "threat": "The instance might be exposed to the internet on these ports without proper security measures, leading to potential unauthorized access.",
     "recommendation": "Make sure to restrict incoming and outgoing traffic as strictly as possible.",
     "severity": "high"
 }

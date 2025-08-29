@@ -1,7 +1,7 @@
 {
     "control_name": "iam_roles_iam_full_access",
     "control_description": "Check if a role has all permissions in IAM.",
-    "risk": "Unintended access to all IAM actions could lead to privilege escalation and unauthorized access to sensitive resources.",
+    "threat": "Unintended access to all IAM actions could lead to privilege escalation and unauthorized access to sensitive resources.",
     "recommendation": "Make sure to restrict IAM permissions as strictly as possible.",
     "severity": "high"
 }

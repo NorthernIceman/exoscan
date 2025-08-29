@@ -1,7 +1,7 @@
 {
     "control_name": "compute_eip_shodan",
     "control_description": "Check if any elastic-ip has a shodan-entry with CVEs.",
-    "risk": "Shodan indexes exposed systems and is a potential resource for adversaries to find exploitable systems.",
+    "threat": "Shodan indexes exposed systems and is a potential resource for adversaries to find exploitable systems.",
     "recommendation": "Check identified IPs and fix the vulnerabilities and/or change the elastic IP.",
     "severity": "critical"
 }

@@ -1,7 +1,7 @@
 {
     "control_name": "compute_ssh_keys_unused",
     "control_description": "Check if any ssh-key is unused.",
-    "risk": "Having unused SSH keys can originate from deprecated configurations or former employees and can induce administrative errors.",
+    "threat": "Having unused SSH keys can originate from deprecated configurations or former employees and can induce administrative errors.",
     "recommendation": "Review if unused keys are still relevant.",
     "severity": "medium"
 }

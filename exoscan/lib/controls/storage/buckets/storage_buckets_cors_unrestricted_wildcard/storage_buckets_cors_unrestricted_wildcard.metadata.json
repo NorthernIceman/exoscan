@@ -1,7 +1,7 @@
 {
     "control_name": "storage_buckets_cors_unrestricted_wildcard",
     "control_description": "Check if any storage buckets allow CORS access from all origins using wildcard ('*').",
-    "risk": "Allowing CORS requests from any origin may expose sensitive data or APIs to untrusted web clients, especially if credentials or sensitive headers are allowed.",
+    "threat": "Allowing CORS requests from any origin may expose sensitive data or APIs to untrusted web clients, especially if credentials or sensitive headers are allowed.",
     "recommendation": "Restrict CORS origins to specific, trusted domains. Avoid using wildcard ('*') unless the resource is explicitly intended to be public and no credentials are involved.",
     "severity": "critical"
 }

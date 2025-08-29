@@ -11,7 +11,7 @@ CACHE_FILE = _temp_cache.name
 
 def get_dbaas_pg() -> DBaaServicePostgreSQL | DBaaServicePostgreSQLContainer:
     try:
-        if not os.path.exists(CACHE_FILE):
+        if not os.path.exists(CACHE_FILE) or os.path.getsize(CACHE_FILE) == 0:
             logger.info("DBaaS cache not found. Creating full inventory...")
             all_pg_dbs = get_dbaas("pg")
             auth = authenticate()

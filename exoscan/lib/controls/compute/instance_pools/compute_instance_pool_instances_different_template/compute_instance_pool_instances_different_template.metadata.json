@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_pool_instances_different_template",
     "control_description": "Check if any instance pool has instances that have a different os template than conigured in the pool config.",
-    "risk": "Some instances in an instance pool are not running the specified os template, this could mean old instances or result in incompatibility.",
+    "threat": "Some instances in an instance pool are not running the specified os template, this could mean old instances or result in incompatibility.",
     "recommendation": "Make sure to delete instances with differing os templates so the pool can run on its desired capacity again and no incompatibilities arise.",
     "severity": "high"
 }

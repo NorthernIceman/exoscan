@@ -20,15 +20,11 @@ def get_private_networks(
             all_pn = []
 
             for region in regions:
-                response = requests.get(
-                    f"https://api-{region}.exoscale.com/v2/private-network", auth=auth
-                )
+                response = requests.get(f"https://api-{region}.exoscale.com/v2/private-network", auth=auth)
                 if response.status_code == 200:
                     for pn in response.json().get("private-networks", []):
-                        details_response = requests.get(
-                            f"https://api-{region}.exoscale.com/v2/private-network/{pn['id']}", 
-                            auth=auth
-                        )
+                        details_response = requests.get(f"https://api-{region}.exoscale.com/v2/private-network/{pn['id']}", 
+                            auth=auth)
                         if details_response.status_code == 200:
                             all_pn.append(details_response.json())
 

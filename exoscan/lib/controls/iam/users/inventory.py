@@ -12,7 +12,7 @@ def get_users(
         user_id: str = None
 ) -> IAMUserContainer | IAMUser:
     try:
-        if not os.path.exists(CACHE_FILE):
+        if not os.path.exists(CACHE_FILE) or os.path.getsize(CACHE_FILE) == 0:
             logger.info("IAM Users cache not found. Creating full inventory...")
             auth = authenticate()
 
@@ -27,7 +27,6 @@ def get_users(
             with open(CACHE_FILE, "w") as f:
                 json.dump(container.model_dump(mode="json", by_alias=True), f, indent=2)
 
-        # Load from cache now (it exists for sure)
         with open(CACHE_FILE, "r") as f:
             json_data = json.load(f)
 

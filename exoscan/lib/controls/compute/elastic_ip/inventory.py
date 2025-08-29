@@ -12,7 +12,7 @@ def get_elastic_ip(
         elastic_ip_id: str = None
 ) -> ElasticIPContainer | ElasticIP:
     try:
-        if not os.path.exists(CACHE_FILE):
+        if not os.path.exists(CACHE_FILE) or os.path.getsize(CACHE_FILE) == 0:
             logger.info("Elastic-IP cache not found. Creating full inventory...")
             regions = return_regions()
             auth = authenticate()

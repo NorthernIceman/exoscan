@@ -12,7 +12,7 @@ def get_roles(
         role_id: str = None
 ) -> IAMRoleContainer | IAMRole:
     try:
-        if not os.path.exists(CACHE_FILE):
+        if not os.path.exists(CACHE_FILE) or os.path.getsize(CACHE_FILE) == 0:
             logger.info("IAM Role cache not found. Creating full inventory...")
             auth = authenticate()
 

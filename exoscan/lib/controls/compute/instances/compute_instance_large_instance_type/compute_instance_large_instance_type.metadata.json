@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_large_instance_type",
     "control_description": "Check if any instance has an instance type that must be enabled.",
-    "risk": "Using large instance types when not necessary increases costs.",
+    "threat": "Using large instance types when not necessary increases costs.",
     "recommendation": "Make sure to review the need for these large or expensive instance types regularly.",
     "severity": "informational"
 }

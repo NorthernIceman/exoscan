@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_without_snapshot",
     "control_description": "Check if any instance snapshot exists.",
-    "risk": "Regular snapshots help with recovery of failed instances and can prevent data loss.",
+    "threat": "Regular snapshots help with recovery of failed instances and can prevent data loss.",
     "recommendation": "Make sure to create snapshots of important machines regularly.",
     "severity": "medium"
 }

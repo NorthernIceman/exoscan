@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_public_ingress_mgmt_ports",
     "control_description": "Check if instance is public and security-group allows ingress traffic from 0.0.0.0/0 or ::0/0 to the ports 5(RJE), 22(SSH), 23(Telnet), 107 (RTelnet), 512 (Exec), 514 (Shell), 992 (TelnetS) and 3389(RDP).",
-    "risk": "The instance might be exposed to the internet on these ports without proper security measures, leading to potential unauthorized access.",
+    "threat": "The instance might be exposed to the internet on these ports without proper security measures, leading to potential unauthorized access.",
     "recommendation": "Make sure to restrict incoming and outgoing traffic as strictly as possible.",
     "severity": "high"
 }

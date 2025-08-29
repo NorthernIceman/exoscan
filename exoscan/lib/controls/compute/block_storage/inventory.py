@@ -18,7 +18,8 @@ def get_block_storage_volumes(
         volume_id: str = None
 ) -> BlockStorageVolumeContainer | BlockStorageVolume:
     try:
-        if not os.path.exists(CACHE_FILE_VOLUME):
+
+        if not os.path.exists(CACHE_FILE_VOLUME) or os.path.getsize(CACHE_FILE_VOLUME) == 0:
             logger.info("Volume cache not found. Creating full inventory...")
             regions = return_regions()
             auth = authenticate()
@@ -32,7 +33,7 @@ def get_block_storage_volumes(
                         details_response  = requests.get(f"https://api-{region}.exoscale.com/v2/block-storage/{volume["id"]}", auth=auth)
                         if details_response.status_code == 200:
                             all_volumes.append(details_response.json())
-                            
+
             container = BlockStorageVolumeContainer.model_validate({"block-storage-volumes": all_volumes})
 
             with open(CACHE_FILE_VOLUME, "w") as f:
@@ -58,7 +59,7 @@ def get_block_storage_snapshots(
         snapshot_id: str = None
 ) -> BlockStorageSnapshotContainer | BlockStorageSnapshot:
     try:
-        if not os.path.exists(CACHE_FILE_VOLUME):
+        if not os.path.exists(CACHE_FILE_SNAPSHOT) or os.path.getsize(CACHE_FILE_SNAPSHOT) == 0:
             logger.info("Snapshot cache not found. Creating full inventory...")
             regions = return_regions()
             auth = authenticate()
@@ -75,10 +76,10 @@ def get_block_storage_snapshots(
                             
             container = BlockStorageSnapshotContainer.model_validate({"block-storage-snapshots": all_snapshots})
 
-            with open(CACHE_FILE_VOLUME, "w") as f:
+            with open(CACHE_FILE_SNAPSHOT, "w") as f:
                 json.dump(container.model_dump(mode="json", by_alias=True), f, indent=2)
 
-        with open(CACHE_FILE_VOLUME, "r") as f:
+        with open(CACHE_FILE_SNAPSHOT, "r") as f:
             json_data = json.load(f)
 
         if snapshot_id:

@@ -1,7 +1,7 @@
 {
     "control_name": "iam_roles_full_access",
     "control_description": "Check if a role has administrator level permissions.",
-    "risk": "Unintended access to all actions could lead to privilege escalation and unauthorized access to sensitive resources.",
+    "threat": "Unintended access to all actions could lead to privilege escalation and unauthorized access to sensitive resources.",
     "recommendation": "Make sure to restrict permissions as strictly as possible and avoid using users or API keys with unrestricted privileges when they are not required.",
     "severity": "high"
 }

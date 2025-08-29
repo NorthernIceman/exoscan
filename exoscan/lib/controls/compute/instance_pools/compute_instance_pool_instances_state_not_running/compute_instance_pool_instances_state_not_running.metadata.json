@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_pool_instances_state_not_running",
     "control_description": "Check if any instance pool has instances that are not running.",
-    "risk": "If instances in an instance pool are not in a running state, performance degradation, reduced availability or incapability to handle expected workloads may be the consequence.",
+    "threat": "If instances in an instance pool are not in a running state, performance degradation, reduced availability or incapability to handle expected workloads may be the consequence.",
     "recommendation": "Make sure to delete instances in a faulty state so the pool can run on its desired capacity again.",
     "severity": "high"
 }

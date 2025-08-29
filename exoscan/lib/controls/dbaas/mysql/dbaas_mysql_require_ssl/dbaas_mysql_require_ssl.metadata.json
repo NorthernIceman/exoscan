@@ -1,7 +1,7 @@
 {
     "control_name": "dbaas_mysql_require_ssl",
     "control_description": "Check if any MySQL dbaas has not sslmode: required set.",
-    "risk": "Using unencrypted protocols to access your data may result in data leaks.",
+    "threat": "Using unencrypted protocols to access your data may result in data leaks.",
     "recommendation": "Enforce encrypted protocols.",
     "severity": "critical"
 }

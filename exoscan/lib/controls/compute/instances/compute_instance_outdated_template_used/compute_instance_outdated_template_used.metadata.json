@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_outdated_template_used",
     "control_description": "Check if any instance uses a template that can no longer be chosen.",
-    "risk": "Using deprecated templates can result in the deployment of unpatched software and outdated OS images.",
+    "threat": "Using deprecated templates can result in the deployment of unpatched software and outdated OS images.",
     "recommendation": "Make sure to review the need for these instances and consider rebuilding them with newer templates.",
     "severity": "high"
 }

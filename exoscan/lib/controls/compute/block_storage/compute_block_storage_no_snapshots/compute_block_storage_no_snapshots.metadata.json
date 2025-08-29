@@ -1,7 +1,7 @@
 {
     "control_name": "compute_block_storage_no_snapshots",
     "control_description": "Check if any block storage volume has no corresponding snapshots.",
-    "risk": "Having no recent snapshots may indicate gaps in a reliable backup and recovery strategy.",
+    "threat": "Having no recent snapshots may indicate gaps in a reliable backup and recovery strategy.",
     "recommendation": "Create volume snapshots regularly.",
     "severity": "medium"
 }

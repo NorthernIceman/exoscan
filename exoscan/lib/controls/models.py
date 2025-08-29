@@ -23,7 +23,7 @@ class ControlMetadata(BaseModel):
     severity: Severity
     control_name: str
     control_description: str
-    risk: str
+    threat: str
     recommendation: str
 
     @classmethod
@@ -52,7 +52,7 @@ class Finding(BaseModel):
             f"{meta.severity.upper()} - {meta.control_name} - {self.resource_description}",
             "",
             f"  - Description: {meta.control_description}",
-            f"  - Risk: {meta.risk}",
+            f"  - Threat: {meta.threat}",
             f"  - Recommendation: {meta.recommendation}",
             ""
         ]
