@@ -13,7 +13,7 @@ def get_instance_templates(
     template_id: str = None
 ) -> TemplateContainer | Template:
     try:
-        if not os.path.exists(CACHE_FILE):
+        if not os.path.exists(CACHE_FILE) or os.path.getsize(CACHE_FILE) == 0:
             logger.info("Instance template cache not found. Creating full inventory...")
             auth = authenticate()
             regions = return_regions()
