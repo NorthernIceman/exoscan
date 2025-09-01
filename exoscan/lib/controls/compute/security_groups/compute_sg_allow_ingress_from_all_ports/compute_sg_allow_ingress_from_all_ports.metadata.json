@@ -1,7 +1,7 @@
 {
     "control_name": "compute_sg_allow_ingress_from_all_ports",
     "control_description": "Check if any security group allows ingress from port 1 to port 65535 in TCP or UDP.",
-    "threat": "Security-Group allows unrestricted inbound traffic on layer 4.",
+    "threat": "Security Group allows unrestricted inbound traffic on layer 4, leading to potential unauthorized access if attached to resources.",
     "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
     "severity": "medium"
 }

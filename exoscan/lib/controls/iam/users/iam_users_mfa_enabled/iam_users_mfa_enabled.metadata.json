@@ -1,7 +1,7 @@
 {
     "control_name": "iam_users_mfa_enabled",
     "control_description": "Check if every user has multi-factor authentication enabled.",
-    "threat": "Unauthorized access to these accounts if password is not secure or it is disclosed in any way.",
+    "threat": "Unauthorized access to these accounts if password is not secure or it is disclosed in any way. ",
     "recommendation": "Make sure to enable MFA on all accounts.",
-    "severity": "high"
+    "severity": "critical"
 }

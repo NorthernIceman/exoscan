@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_pool_instances_different_type",
     "control_description": "Check if any instance pool has instances that have a different type than conigured in the pool config.",
-    "threat": "Some instances in an instance pool are not running the specified type, this could mean old instances or result in incompatibility.",
+    "threat": "If some instances in an instance pool are not running the specified type, unpatched instances, deprecated services or incompatibility can be the consequence.",
     "recommendation": "Make sure to delete instances with differing types so the pool can run on its desired capacity again and no incompatibilities arise.",
     "severity": "high"
 }

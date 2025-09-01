@@ -1,7 +1,7 @@
 {
     "control_name": "compute_load_balancer_security_health_check_fails",
     "control_description": "Check if any load-balancers' services healthchecks have failed.",
-    "threat": "If healthchecks are not successfull, the load-balancer does not forward traffic to the instances, resulting in reduced availability.",
+    "threat": "If health checks fail, the load balancer does not forward traffic to the instances, resulting in reduced availability.",
     "recommendation": "Make sure to configure the healthchecks properly and/or adjust your application.",
     "severity": "high"
 }

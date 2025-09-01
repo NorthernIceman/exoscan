@@ -3,5 +3,5 @@
     "control_description": "Check if any instance has an instance type that must be enabled.",
     "threat": "Using large instance types when not necessary increases costs.",
     "recommendation": "Make sure to review the need for these large or expensive instance types regularly.",
-    "severity": "informational"
+    "severity": "low"
 }

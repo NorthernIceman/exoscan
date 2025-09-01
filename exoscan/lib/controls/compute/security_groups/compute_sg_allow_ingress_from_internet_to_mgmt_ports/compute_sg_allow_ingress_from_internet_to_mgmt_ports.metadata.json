@@ -1,7 +1,7 @@
 {
     "control_name": "compute_sg_allow_ingress_from_internet_to_mgmt_ports",
     "control_description": "Check if any security group allows ingress from 0.0.0.0/0 or ::0/0 to the ports 22(SSH), 23(Telnet), 512 (Exec), 514 (Shell), 992 (TelnetS) and 3389(RDP).",
-    "threat": "Security Groups & Medium & Security-Group allows inbound traffic for remote management protocol ports.",
+    "threat": "Security group allows inbound traffic for remote management protocol ports, leading to potential unauthorized access if attached to resources.",
     "recommendation": "Make sure to limit inbound traffic as strictly as possible.",
     "severity": "medium"
 }

@@ -3,5 +3,5 @@
     "control_description": "Check if a role has all permissions in IAM.",
     "threat": "Unintended access to all IAM actions could lead to privilege escalation and unauthorized access to sensitive resources.",
     "recommendation": "Make sure to restrict IAM permissions as strictly as possible.",
-    "severity": "high"
+    "severity": "medium"
 }

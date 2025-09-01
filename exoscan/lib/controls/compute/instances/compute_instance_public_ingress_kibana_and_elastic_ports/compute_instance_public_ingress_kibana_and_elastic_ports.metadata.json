@@ -1,7 +1,7 @@
 {
     "control_name": "compute_instance_public_ingress_kibana_and_elastic_ports",
     "control_description": "Check if instance is public and security-group allows ingress traffic from 0.0.0.0/0 or ::0/0 to the ports 9200, 9300, 5601.",
-    "threat": "The instance might be exposed to the internet on these ports without proper security measures, leading to potential unauthorized access.",
+    "threat": "Instance is public and the attached security group allows inbound traffic for Kibana and Elastic ports, leading to potential unauthorized access.",
     "recommendation": "Make sure to restrict incoming and outgoing traffic as strictly as possible.",
-    "severity": "high"
+    "severity": "critical"
 }

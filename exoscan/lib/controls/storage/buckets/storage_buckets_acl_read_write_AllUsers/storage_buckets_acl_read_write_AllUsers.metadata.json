@@ -1,7 +1,7 @@
 {
     "control_name": "storage_buckets_acl_read_write_AllUsers",
     "control_description": "Check if any buckets grant read and write access to the AllUsers group.",
-    "threat": "Read and write access for all users has the possibility of disclosure and manipulation of data.",
+    "threat": "Read and write access for all users carries the threat of disclosure and manipulation of consumer data.",
     "recommendation": "Make sure to create and use more fine grained access list rules.",
-    "severity": "high"
+    "severity": "critical"
 }

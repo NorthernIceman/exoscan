@@ -1,7 +1,7 @@
 {
     "control_name": "compute_eip_unused",
     "control_description": "Check if any elastic-ip is unused.",
-    "threat": "Having unused elastic-IPs will increase costs.",
+    "threat": "Having unused elastic IPs increases costs without apparent benefit.",
     "recommendation": "Review if unused IPs are still relevant.",
     "severity": "informational"
 }
