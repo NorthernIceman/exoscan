@@ -3,5 +3,5 @@
     "control_description": "Check if any buckets have versioning not enabled.",
     "threat": "File Versioning facilitates the recovery of data from user actions or application failures.",
     "recommendation": "Enable object versioning for important or sensitive information.",
-    "severity": "High"
+    "severity": "high"
 }

@@ -37,6 +37,6 @@ def execute_logic(metadata_path):
         return findings
                 
     except Exception as error:
-        logger.error(f"11{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
+        logger.error(f"{error.__class__.__name__}[{error.__traceback__.tb_lineno}] -- {error}")
         sys.exit(1)
     return
