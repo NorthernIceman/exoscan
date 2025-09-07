@@ -22,7 +22,6 @@ def execute_logic(metadata_path):
                 found_sg.append(f" - Security-Group: {sg.name}\n    {rules_str}")  
         if found_sg:
             sg_str = "\n".join(found_sg)
-            print(sg_str)
             findings.append(Finding.from_metadata(
                 metadata_file= metadata_path,
                 resource_description=f"Security-Groups:\n{sg_str}"
