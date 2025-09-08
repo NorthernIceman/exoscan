@@ -11,22 +11,23 @@ def execute_logic(metadata_path):
             logger.info("No Security-Groups found. Skipping Control compute_sg_allow_ingress_from_internet_to_mgmt_ports...")
             return
         findings = []
-        risky_ports = [22, 23, 512, 514, 992, 995, 3389]
+        ports = [22, 23, 512, 514, 992, 995, 3389]
         found_sg = []
         for sg in all_sg.security_groups:
-            risky_rules = []
-            for rule in sg.rules:
-                if rule.network and rule.start_port and rule.end_port:
-                    if rule.network in ["0.0.0.0/0", "::/0"] and rule.flow_direction == "ingress":
-                        matched_ports = []
-                        for port in risky_ports:
-                            if port in range(int(rule.start_port), int(rule.end_port) + 1):
-                                matched_ports.append(f"{port}/{rule.protocol}")
-                        if matched_ports:
-                            ports_str = ", ".join(sorted(matched_ports))
-                            risky_rules.append(f"(Rule-ID: {rule.id}, Ports: {ports_str})")
-            if risky_rules:
-                rules_str = "\n    ".join(risky_rules)
+            found_rules = []
+            if sg.rules:
+                for rule in sg.rules:
+                    if rule.network and rule.start_port and rule.end_port:
+                        if rule.network in ["0.0.0.0/0", "::/0"] and rule.flow_direction == "ingress":
+                            matched_ports = []
+                            for port in ports:
+                                if port in range(int(rule.start_port), int(rule.end_port) + 1):
+                                    matched_ports.append(f"{port}/{rule.protocol}")
+                            if matched_ports:
+                                ports_str = ", ".join(sorted(matched_ports))
+                                found_rules.append(f"(Rule-ID: {rule.id}, Ports: {ports_str})")
+            if found_rules:
+                rules_str = "\n    ".join(found_rules)
                 found_sg.append(f" - Security-Group: {sg.name}\n    {rules_str}")
         if found_sg:
             sgs_str = "\n".join(found_sg)

@@ -20,7 +20,6 @@ def get_dbaas_pg() -> DBaaServicePostgreSQL | DBaaServicePostgreSQLContainer:
             if not all_pg_dbs: 
                 logger.info("No postgreSQL-DBaaS found.")
                 return
-            #API for DBaaS is different: need to get name of all types (pg, mysql, ...) then for details need own inventory with its own url. so here, we only get the service overview which serves other inventory files as name-type-inventory
             for db in all_pg_dbs:
                 response = requests.get(f"https://api-{db['zone']}.exoscale.com/v2/dbaas-postgres/{db['name']}", auth=auth)
                 if response.status_code == 200:

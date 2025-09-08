@@ -30,7 +30,6 @@ def get_roles(
             with open(CACHE_FILE, "w") as f:
                 json.dump(container.model_dump(mode="json", by_alias=True), f, indent=2)
 
-        # Load from cache now (it exists for sure)
         with open(CACHE_FILE, "r") as f:
             json_data = json.load(f)
 

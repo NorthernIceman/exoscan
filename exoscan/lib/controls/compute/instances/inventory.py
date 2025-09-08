@@ -39,7 +39,6 @@ def get_instances(
             with open(CACHE_FILE, "w") as f:
                 json.dump(container.model_dump(mode="json", by_alias=True), f, indent=2)
 
-        # Load from cache now (it exists for sure)
         with open(CACHE_FILE, "r") as f:
             json_data = json.load(f)
 
@@ -60,7 +59,6 @@ def get_instance_types(
         instance_type: str = None
 ) -> InstanceTypeContainer | InstanceType:   
     try:
-        # Always check for cache; if not exists, build full inventory
         if not os.path.exists(CACHE_FILE_TYPE) or os.path.getsize(CACHE_FILE_TYPE) == 0:
             logger.info("Instance type cache not found. Creating full inventory...")
             regions = return_regions()
@@ -83,7 +81,6 @@ def get_instance_types(
             with open(CACHE_FILE_TYPE, "w") as f:
                 json.dump(container.model_dump(mode="json", by_alias=True), f, indent=2)
 
-        # Cache file exists now — load it
         with open(CACHE_FILE_TYPE, "r") as f:
             json_data = json.load(f)
 

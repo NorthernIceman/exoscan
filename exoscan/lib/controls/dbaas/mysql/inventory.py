@@ -16,7 +16,6 @@ def get_dbaas_mysql() -> DBaaServiceMySQL | DBaaServiceMySQLContainer:
             all_mysql_dbs = get_dbaas("mysql")
             auth = authenticate()
             all_dbaas = []
-            #API for DBaaS is different: need to get name of all types (pg, mysql, ...) then for details need own inventory with its own url. so here, we only get the service overview which serves other inventory files as name-type-inventory
             if not all_mysql_dbs: 
                 logger.info("No MySQL-DBaaS found.")
                 return

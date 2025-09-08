@@ -18,7 +18,7 @@ def get_dbaas(
             auth = authenticate()
 
             all_dbaas = []
-            #API for DBaaS is different: need to get name of all types (pg, mysql, ...) then for details need own inventory with its own url. so here, we only get the service overview which serves other inventory files as name-type-inventory
+            
             for region in regions:
                 response = requests.get(f"https://api-{region}.exoscale.com/v2/dbaas-service", auth=auth)
                 if response.status_code == 200 and response:
@@ -42,7 +42,6 @@ def get_dbaas(
             if dbaas_dict: 
                 return dbaas_dict
 
-            #logger.warning(f"DBaaS Type'{dbaas_type}' not found in cached inventory.") #logged in calling function, leaving it in here to know why there is this return
             return
 
         return DBaaServiceContainer.model_validate(json_data)

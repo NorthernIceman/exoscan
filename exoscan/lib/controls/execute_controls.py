@@ -13,7 +13,6 @@ def execute_controls(controls_modules_path):
 
             *base_path, filename = parts
 
-            # Reconstruct path with filename.metadata.json
             metadata_path = Path("/".join(base_path)) / f"{filename}.metadata.json"
             control_findings = control.execute_logic(metadata_path)
             if control_findings:
